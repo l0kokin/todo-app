@@ -16,6 +16,9 @@ export default {
             colors: {
                 'gray': 'rgba(246, 248, 250, 1)',
                 'text-color': '#2F363D',
+                'light-text': "rgba(106, 115, 125, 1)",
+                'blue': 'rgba(73, 154, 249, 1)',
+                'blue-darker': 'rgba(58, 123, 199, 1)'
             },
         },
     },
