@@ -12,7 +12,10 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Helvetica', 'Arial', ...defaultTheme.fontFamily.sans],             },
+            colors: {
+                'gray': 'rgba(246, 248, 250, 1)',
+                'text-color': '#2F363D',
             },
         },
     },

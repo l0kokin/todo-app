@@ -5,11 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Task Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;700&display=swap" rel="stylesheet">
+    @vite(['resources/css/app.css' ])
+
 </head>
 <body>
-    {{-- side bar --}}
-    <main>
-        {{ $slot }}
-    </main>
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <nav class="bg-gray w-42 flex-shrink-0 m-10 rounded-lg">
+            <div class="h-full flex flex-col">
+            <!-- Links -->
+            <div class="flex-1 px-4 py-4 overflow-y-auto flex flex-col items-center">
+                <img src="{{ asset('images/avatar.png') }}" alt="Profile Picture" class="w-16 rounded-full mb-28">
+                <x-nav-link :icon="'my-tasks'">My Tasks</x-nav-link>
+                <x-nav-link :icon="'due-tasks'">Due Tasks</x-nav-link>
+                <x-nav-link :icon="'profile'">Profile</x-nav-link>
+            </div>
+            <!-- Footer -->
+            <div class="px-4 py-4">
+              <x-nav-link :icon="'log-out'">Log Out</x-nav-link>
+            </div>
+          </div>
+        </nav>
+      
+        <!-- Main Content -->
+        <div class="flex-1">
+            <main>
+                {{ $slot }}
+            </main>
+        </div>
+      </div>      
 </body>
 </html>
