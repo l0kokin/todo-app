@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Task extends Model
 {
-	/** @use HasFactory<\Database\Factories\TaskFactory> */
 	use HasFactory;
 
 	public function user(): BelongsTo
