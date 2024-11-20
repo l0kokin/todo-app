@@ -8,7 +8,7 @@ class TaskController extends Controller
 {
 	public function index()
 	{
-		$tasks = Task::all();
+		$tasks = Task::paginate(8);
 
 		return view('index', compact('tasks'));
 	}
