@@ -12,14 +12,15 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Helvetica', 'Arial', ...defaultTheme.fontFamily.sans],             },
+                sans: ['Helvetica', 'Arial', ...defaultTheme.fontFamily.sans], },
             colors: {
                 'gray': 'rgba(246, 248, 250, 1)',
                 'gray-darker': 'rgba(47, 54, 61, 1)',
                 'text-color': 'rgb(47, 54, 61)',
                 'light-text': "rgba(106, 115, 125, 1)",
                 'blue': 'rgba(73, 154, 249, 1)',
-                'blue-darker': 'rgba(58, 123, 199, 1)'
+                'blue-darker': 'rgba(58, 123, 199, 1)',
+                'blue-gradient': 'rgba(73, 154, 249, 0.08)',
             },
         },
     },

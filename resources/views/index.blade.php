@@ -32,5 +32,6 @@
         <div class="mt-10">
             {{ $tasks->links() }}
         </div>
+          
     </div>
 </x-layout>
