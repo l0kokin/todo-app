@@ -27,7 +27,7 @@
         </nav>
       
         <!-- Main Content -->
-        <main class="flex-1 my-40 mx-10">
+        <main class="flex-1 my-40 mx-10 relative">
             {{ $slot }}
         </main>
       </div>      
