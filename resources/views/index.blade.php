@@ -29,7 +29,7 @@
             </tbody>
         </table>
 
-        <div class="mt-10">
+        <div class="my-14">
             {{ $tasks->links() }}
         </div>
           

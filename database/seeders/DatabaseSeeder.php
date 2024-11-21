@@ -23,6 +23,6 @@ class DatabaseSeeder extends Seeder
 
 		$this->call(TaskSeeder::class);
 
-		Task::factory()->count(10)->create();
+		Task::factory()->count(100)->create();
 	}
 }
