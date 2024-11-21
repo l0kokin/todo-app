@@ -9,7 +9,7 @@
                     <th class="w-1/3 pb-8 text-left text-gray-400 font-medium text-lg">@lang('table.description')</th>
                     <th class="w-1/7 pb-8 text-left text-gray-400 font-medium text-lg">@lang('table.createdDate')</th>
                     <th class="w-1/7 pb-8 text-left text-gray-400 font-medium text-lg">@lang('table.dueDate')</th>
-                    <th class="w-1/4 pb-8 pl-6 text-left text-gray-400 font-medium text-lg">@lang('table.action')</th>
+                    <th class="w-1/4 pb-8 pl-6 text-left text-gray-400 font-medium text-lg">@lang('table.actions')</th>
                 </tr>
             </thead>
             <tbody class="bg-white">
@@ -22,7 +22,9 @@
                         <x-table-item>
                             <button class="pl-6 mr-8 underline text-gray-darker">@lang('table.delete')</button>
                             <button class="mr-8 underline text-gray-darker">@lang('table.edit')</button>
-                            <button class="mr-8 underline text-gray-darker">@lang('table.show')</button>
+                            <a href={{ route('taskInner', $task->id) }}>
+                                <button class="mr-8 underline text-gray-darker">@lang('table.show')</button>
+                            </a>
                         </x-table-item>
                     </tr>
                 @endforeach

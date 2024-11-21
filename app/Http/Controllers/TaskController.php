@@ -12,4 +12,15 @@ class TaskController extends Controller
 
 		return view('index', compact('tasks'));
 	}
+
+	public function show(Task $task)
+	{
+		// dd($task);
+
+		if (!$task) {
+			return redirect()->route('tasks.index')->with('error', 'Task not found.');
+		}
+
+		return view('taskInner', ['task' => $task]);
+	}
 }
