@@ -3,7 +3,8 @@
 return [
 	'taskName'    => 'Task Name',
 	'description' => 'Description',
-	'createdDate' => 'Created at',
+	'createdAt'   => 'Created at',
+	'createdDate' => 'Created Date',
 	'dueDate'     => 'Due Date',
 	'actions'     => 'Actions',
 	'delete'      => 'Delete',

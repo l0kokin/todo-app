@@ -7,7 +7,7 @@
                 <tr class="border-b-2 border-gray">
                     <th class="w-1/4 pb-8 text-left text-gray-400 font-medium text-lg">@lang('table.taskName')</th>
                     <th class="w-1/3 pb-8 text-left text-gray-400 font-medium text-lg">@lang('table.description')</th>
-                    <th class="w-1/7 pb-8 text-left text-gray-400 font-medium text-lg">@lang('table.createdDate')</th>
+                    <th class="w-1/7 pb-8 text-left text-gray-400 font-medium text-lg">@lang('table.createdAt')</th>
                     <th class="w-1/7 pb-8 text-left text-gray-400 font-medium text-lg">@lang('table.dueDate')</th>
                     <th class="w-1/4 pb-8 pl-6 text-left text-gray-400 font-medium text-lg">@lang('table.actions')</th>
                 </tr>
