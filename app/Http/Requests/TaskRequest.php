@@ -14,31 +14,38 @@ class TaskRequest extends FormRequest
 	public function rules(): array
 	{
 		return [
-			'name_en' => [
+			'name.en' => [
 				'required',
 				'string',
 				'min:3',
 				'regex:/^[a-zA-Z\s]+$/',
 			],
-			'name_ka' => [
+
+			'name.ka' => [
 				'required',
 				'string',
 				'min:3',
 				'regex:/^[ა-ჰ\s]+$/',
 			],
-			'description_en' => [
+
+			'description.en' => [
 				'required',
 				'string',
 				'min:3',
 				'regex:/^[a-zA-Z\s]+$/',
 			],
-			'description_ka' => [
+
+			'description.ka' => [
 				'required',
 				'string',
 				'min:3',
 				'regex:/^[ა-ჰ\s]+$/',
 			],
-			'dueDate' => 'required|date',
+
+			'due_date' => [
+				'required',
+				'date',
+			],
 		];
 	}
 }
