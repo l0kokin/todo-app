@@ -18,11 +18,13 @@ class TaskFactory extends Factory
 	public function definition(): array
 	{
 		return [
-			'task_name'         => fake()->sentence,
-			'description'       => fake()->paragraph,
-			'created_at'        => fake()->date,
-			'due_date'          => fake()->date,
-			'user_id'           => User::factory(),
+			'name_english'               => fake()->realText(30),
+			'name_georgian'              => fake('ka_GE')->realText(30),
+			'description_english'        => fake()->realText(220),
+			'description_georgian'       => fake('ka_GE')->realText(220),
+			'created_at'                 => fake()->date,
+			'due_date'                   => fake()->date,
+			'user_id'                    => User::factory(),
 		];
 	}
 }

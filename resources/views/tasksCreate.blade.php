@@ -4,7 +4,8 @@
             Create Task
         </x-header-inner>
         
-        <form action="" class="min-w-[35%] -mt-12">
+        <form method="POST" action="{{ route('tasks.store') }}" class="min-w-[35%] -mt-12">
+            @csrf
             <div class="relative mt-6">
                 <input 
                     type="text" 
@@ -78,7 +79,7 @@
 
             <x-button-white type='submit' class="mt-6 py-8 bg-blue hover:bg-blue-darker text-white w-full flex justify-center">Create Task</x-button-white>       
         </form>
-
-        <x-languages/>
     </div>
+    
+    <x-languages/>
 </x-layout>

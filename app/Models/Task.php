@@ -11,7 +11,11 @@ class Task extends Model
 	use HasFactory;
 
 	protected $fillable = [
-		'task_name', 'description', 'due_date',
+		'name_english',
+		'name_georgian',
+		'description_english',
+		'description_georgian',
+		'due_date',
 	];
 
 	public function user(): BelongsTo

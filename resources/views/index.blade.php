@@ -15,8 +15,8 @@
             <tbody class="bg-white">
                 @foreach($tasks as $task)
                     <tr>
-                        <x-table-item>{{ $task->task_name }}</x-table-item>
-                        <x-table-item>{{ $task->description }}</x-table-item>
+                        <x-table-item>{{ $task->name_english }}</x-table-item>
+                        <x-table-item>{{ $task->description_english }}</x-table-item>
                         <x-table-item>{{ \Carbon\Carbon::parse($task->created_at)->format('d/m/Y') }}</x-table-item>
                         <x-table-item>{{ \Carbon\Carbon::parse($task->due_date)->format('d/m/Y') }}</x-table-item>
                         <x-table-item>
