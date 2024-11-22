@@ -8,3 +8,12 @@
     font-weight: normal;
     src: url('/public/fonts/Helvetica.woff') format('woff');
 }
+
+/* Hide calendar icon from date input */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+input[type="date"]::-moz-calendar-picker-indicator {
+    display: none;
+}

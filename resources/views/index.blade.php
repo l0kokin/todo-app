@@ -2,7 +2,7 @@
     <x-header />
 	
     <div  class="w-full">
-        <table class="w-full table-fixed mt-10">
+        <table class="w-full table-fixed">
             <thead>
                 <tr class="border-b-2 border-gray">
                     <th class="w-1/4 pb-8 text-left text-gray-400 font-medium text-lg">@lang('table.taskName')</th>
@@ -20,10 +20,10 @@
                         <x-table-item>{{ \Carbon\Carbon::parse($task->created_at)->format('d/m/Y') }}</x-table-item>
                         <x-table-item>{{ \Carbon\Carbon::parse($task->due_date)->format('d/m/Y') }}</x-table-item>
                         <x-table-item>
-                            <button class="pl-6 mr-8 underline text-gray-darker">@lang('table.delete')</button>
-                            <button class="mr-8 underline text-gray-darker">@lang('table.edit')</button>
+                            <button class="pl-6 mr-8 underline text-black">@lang('table.delete')</button>
+                            <button class="mr-8 underline text-black">@lang('table.edit')</button>
                             <a href={{ route('taskInner', $task->id) }}>
-                                <button class="mr-8 underline text-gray-darker">@lang('table.show')</button>
+                                <button class="mr-8 underline text-black">@lang('table.show')</button>
                             </a>
                         </x-table-item>
                     </tr>
