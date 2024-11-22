@@ -6,6 +6,7 @@
         
         <form method="POST" action="{{ route('tasks.store') }}" class="min-w-[35%] -mt-12">
             @csrf
+            
             <div class="relative mt-6">
                 <input 
                     type="text" 
@@ -15,7 +16,7 @@
                 />
                 <label 
                     for="nameEnglish" 
-                    class="absolute left-6 top-2 text-sm text-dark-gray transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:dark-gray peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500"                >
+                    class="absolute left-6 top-2 text-sm text-dark-gray transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:dark-gray peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500">
                     @lang('table.nameEnglish')
                 </label>
             </div>
@@ -29,7 +30,7 @@
                 />
                 <label 
                     for="nameGeorgian" 
-                    class="absolute left-6 top-2 text-sm text-dark-gray transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:dark-gray peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500"                >
+                    class="absolute left-6 top-2 text-sm text-dark-gray transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:dark-gray peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500">
                     @lang('table.nameGeorgian')
                 </label>
             </div>

@@ -14,10 +14,8 @@ return new class extends Migration {
 		Schema::create('tasks', function (Blueprint $table) {
 			$table->id();
 			$table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
-			$table->string('name_english');
-			$table->string('name_georgian');
-			$table->text('description_english');
-			$table->text('description_georgian');
+			$table->string('name');
+			$table->text('description');
 			$table->dateTime('due_date');
 			$table->timestamps();
 		});

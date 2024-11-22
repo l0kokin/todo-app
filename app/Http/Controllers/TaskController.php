@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TaskRequest;
 use App\Models\Task;
-use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
@@ -11,7 +11,7 @@ class TaskController extends Controller
 	{
 		$tasks = Task::paginate(8);
 
-		return view('index', compact('tasks'));
+		return view('tasks.index', compact('tasks'));
 	}
 
 	public function show(Task $task)
@@ -20,29 +20,21 @@ class TaskController extends Controller
 			return redirect()->route('tasks.index')->with('error', 'Task not found.');
 		}
 
-		return view('taskInner', ['task' => $task]);
+		return view('tasks.show', ['task' => $task]);
 	}
 
 	public function create()
 	{
-		return view('tasksCreate');
+		return view('tasks.create');
 	}
 
-	public function store(Request $request)
+	public function store(TaskRequest $request)
 	{
-		$validated = $request->validate([
-			'nameEnglish'         => 'required|string|max:255',
-			'nameGeorgian'        => 'required|string|max:255',
-			'descriptionEnglish'  => 'required|string',
-			'descriptionGeorgian' => 'required|string',
-			'dueDate'             => 'required|date',
-		]);
+		$validated = $request->validated();
 
 		Task::create([
-			'name_english'         => $validated['nameEnglish'],
-			'name_georgian'        => $validated['nameGeorgian'],
-			'description_english'  => $validated['descriptionEnglish'],
-			'description_georgian' => $validated['descriptionGeorgian'],
+			'name'                 => $validated['nameEnglish'],
+			'description'          => $validated['descriptionEnglish'],
 			'due_date'             => $validated['dueDate'],
 		]);
 
