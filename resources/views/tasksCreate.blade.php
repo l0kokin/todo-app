@@ -4,7 +4,7 @@
             Create Task
         </x-header-inner>
         
-        <form action="" class="min-w-[40%] -mt-12">
+        <form action="" class="min-w-[35%] -mt-12">
             <div class="relative mt-6">
                 <input 
                     type="text" 
@@ -74,7 +74,9 @@
                 >
                     @lang('table.dueDate')
                 </label>
-            </div>            
+            </div>     
+
+            <x-button-white type='submit' class="mt-6 py-8 bg-blue hover:bg-blue-darker text-white w-full flex justify-center">Create Task</x-button-white>       
         </form>
 
         <x-languages/>
