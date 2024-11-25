@@ -36,9 +36,10 @@ class TaskController extends Controller
 			'name'        => $validated['name'],
 			'description' => $validated['description'],
 			'due_date'    => $validated['due_date'],
+			// change this later
 			'user_id'     => null,
 		]);
 
-		return redirect('/tasks')->with('success', 'Task created successfully!');
+		return redirect()->route('tasks.index')->with('success', 'Task created successfully!');
 	}
 }
