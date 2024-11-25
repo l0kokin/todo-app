@@ -9,7 +9,7 @@ class TaskController extends Controller
 {
 	public function index()
 	{
-		$tasks = Task::paginate(8);
+		$tasks = Task::latest()->paginate(8);
 
 		return view('tasks.index', compact('tasks'));
 	}
@@ -32,19 +32,7 @@ class TaskController extends Controller
 	{
 		$validated = $request->validated();
 
-		// dd($validated);
-
 		Task::create([
-			// 'name'        => [
-			// 	'en' => $validated['name.en'],
-			// 	'ka' => $validated['name.ka'],
-			// ],
-			// 'description' => [
-			// 	'en' => $validated['description.en'],
-			// 	'ka' => $validated['description.ka'],
-			// ],
-			// 'due_date'    => $validated['due_date'],
-
 			'name'        => $validated['name'],
 			'description' => $validated['description'],
 			'due_date'    => $validated['due_date'],

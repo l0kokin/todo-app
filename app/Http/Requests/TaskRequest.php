@@ -18,28 +18,28 @@ class TaskRequest extends FormRequest
 				'required',
 				'string',
 				'min:3',
-				// 'regex:/^[a-zA-Z\s,\.!?"\'-]+$/',
+				'regex:/^[a-zA-Z\s,\.!?"\'-]+$/',
 			],
 
 			'name.ka' => [
 				'required',
 				'string',
 				'min:3',
-				// 'regex:/^[\p{ა-ჰ}\s,\.!?"\'-]+$/u',
+				'regex:/^[ა-ჰ\s,\.!?"\'-]+$/',
 			],
 
 			'description.en' => [
 				'required',
 				'string',
 				'min:3',
-				// 'regex:/^[a-zA-Z\s,\.!?"\'-]+$/',
+				'regex:/^[a-zA-Z\s,\.!?"\'-]+$/',
 			],
 
 			'description.ka' => [
 				'required',
 				'string',
 				'min:3',
-				// 'regex:/^[\p{Georgian}\s,\.!?"\'-]+$/u',
+				'regex:/^[ა-ჰ\s,\.!?"\'-]+$/',
 			],
 
 			'due_date' => [

@@ -49,11 +49,10 @@
                 <textarea 
                     id="descriptionEnglish"
                     name="description[en]"
-                    value="{{ old('description.en') }}"
                     rows="3" 
                     class="block w-full rounded-lg p-6 text-black bg-gray focus:ring-2 focus:border-blue sm:text-sm outline-none peer
                     @error('description.en') outline-red outline-1 @else border-gray-300 @enderror"
-                ></textarea>
+                >{{ old('description.en') }}</textarea>
                 <label 
                     for="descriptionEnglish" 
                     class="absolute left-6 top-2 text-sm text-dark-gray transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:dark-gray peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500"                >
@@ -69,10 +68,9 @@
                     id="descriptionGeorgian" 
                     name="description[ka]"
                     rows="3" 
-                    value="{{ old('description.ka') }}"
                     class="block w-full rounded-lg p-6 text-black bg-gray focus:ring-2 focus:border-blue sm:text-sm outline-none peer
                     @error('description.ka') outline-red outline-1 @else border-gray-300 @enderror"
-                ></textarea>
+                >{{ old('description.ka') }}</textarea>
                 <label 
                     for="descriptionGeorgian" 
                     class="absolute left-6 top-2 text-sm text-dark-gray transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:dark-gray peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500"                >
