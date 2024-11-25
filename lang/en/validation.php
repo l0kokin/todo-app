@@ -189,5 +189,10 @@ return [
 	*/
 
 	'attributes' => [
+		'name.en'        => 'Name',
+		'name.ka'        => 'Name',
+		'description.en' => 'Description',
+		'description.ka' => 'Description',
+		'due_date'       => 'Due Date',
 	],
 ];

@@ -48,15 +48,4 @@ class TaskRequest extends FormRequest
 			],
 		];
 	}
-
-	public function attributes()
-	{
-		return [
-			'name.en'        => 'Name',
-			'name.ka'        => 'Name',
-			'description.en' => 'Description',
-			'description.ka' => 'Description',
-			'due_date'       => 'Due Date',
-		];
-	}
 }
