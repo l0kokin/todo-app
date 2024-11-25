@@ -13,7 +13,9 @@ return new class extends Migration {
 	{
 		Schema::create('tasks', function (Blueprint $table) {
 			$table->id();
-			$table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
+			// $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
+			// need to change this later
+			$table->unsignedBigInteger('user_id')->nullable()->after('id');
 			$table->json('name');
 			$table->json('description');
 			$table->dateTime('due_date');

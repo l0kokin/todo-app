@@ -21,7 +21,8 @@ export default {
                 'light-text': "rgba(106, 115, 125, 1)",
                 'blue': 'rgba(73, 154, 249, 1)',
                 'blue-darker': 'rgba(58, 123, 199, 1)',
-                'blue-gradient': 'rgba(73, 154, 249, 0.08),'
+                'blue-gradient': 'rgba(73, 154, 249, 0.08)',
+                'red': 'rgba(233, 24, 24, 1)',
             },
         },
     },

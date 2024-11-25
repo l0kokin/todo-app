@@ -14,10 +14,8 @@ class Task extends Model
 	public $translatable = ['name', 'description'];
 
 	protected $fillable = [
-		'name_english',
-		'name_georgian',
-		'description_english',
-		'description_georgian',
+		'name',
+		'description',
 		'due_date',
 	];
 
