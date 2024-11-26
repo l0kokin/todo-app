@@ -2,22 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\LoginRequest;
 use Illuminate\Validation\ValidationException;
 
 class SessionController extends Controller
 {
 	public function create()
 	{
-		return view('home');
+		Route::view('/', 'home');
 	}
 
-	public function store()
+	public function store(LoginRequest $request)
 	{
-		$attributes = request()->validate([
-			'email'    => ['required', 'email'],
-			'password' => ['required', 'min:4'],
-		]);
+		$attributes = $request->validated();
 
 		if (!Auth::attempt($attributes)) {
 			throw ValidationException::withMessages([
@@ -27,12 +26,12 @@ class SessionController extends Controller
 		}
 
 		request()->session()->regenerate();
-		return redirect('/tasks');
+		return redirect()->route('tasks.index');
 	}
 
 	public function destroy()
 	{
 		Auth::logout();
-		return redirect('/');
+		return redirect()->route('home');
 	}
 }
