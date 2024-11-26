@@ -16,10 +16,15 @@
         {{-- Sign in form --}}
         <div class="flex min-h-full flex-col justify-center mx-20 w-1/2 relative">
             <div class="mt-10 flex justify-between sm:mx-auto sm:w-full sm:max-w-sm">
-                <h2 class=" text-left text-3xl font-bold tracking-tight text-black uppercase whitespace-nowrap">@lang('auth.welcome')</h2>
+                <div>
+                    <h2 class=" text-left text-3xl font-bold tracking-tight text-black uppercase whitespace-nowrap">@lang('auth.welcome')</h2>
+                    <p class="font-sans leading-4 text-left text-light-text">@lang('auth.enterDetails')</p>
+                </div>
                 <img src="{{ asset('icons/smile.svg') }}" alt="Smiley face" class="">
             </div>
-            <form class="space-y-6 mt-10 sm:mx-auto sm:w-full sm:max-w-sm" action="#" method="POST">
+
+            <form class="space-y-6 mt-10 sm:mx-auto sm:w-full sm:max-w-sm" action="/login" method="POST">
+                @csrf
                 <x-input-field 
                     type="email"
                     name="email"
@@ -27,8 +32,7 @@
                     value="email" 
                     label="auth.email"
                     error="email"
-                />     
-            
+                />
                 <x-input-field 
                     type="password"
                     name="password"
@@ -37,11 +41,9 @@
                     label="auth.password"
                     error="password"
                 />     
-
-                <div>
-                    <x-button-white type="submit" class="uppercase bg-blue hover:bg-blue-darker text-white w-full flex justify-center">@lang('auth.login')</x-button-white>
-                </div>
+            <x-button-white type="submit" class="uppercase bg-blue hover:bg-blue-darker text-white w-full flex justify-center">@lang('auth.login')</x-button-white>
             </form>
+
             <x-languages class="bottom-10 right-40"  />
         </div>
     </div>

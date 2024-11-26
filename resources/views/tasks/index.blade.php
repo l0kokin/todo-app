@@ -22,7 +22,7 @@
                         <x-table-item>
                             <button class="pl-6 mr-8 underline text-black">@lang('table.delete')</button>
                             <button class="mr-8 underline text-black">@lang('table.edit')</button>
-                            <a href={{ route('taskInner', $task->id) }}>
+                            <a href={{ route('tasks.show', $task->id) }}>
                                 <button class="mr-8 underline text-black">@lang('table.show')</button>
                             </a>
                         </x-table-item>
