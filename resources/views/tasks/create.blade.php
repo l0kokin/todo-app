@@ -1,7 +1,7 @@
 <x-layout>
     <div class="flex flex-col items-center -ml-20">
         <x-header-inner>
-            Create Task
+            @lang('create.create')
         </x-header-inner>
         
         <form method="POST" action="{{ route('tasks.store') }}" class="min-w-[35%] -mt-12">
@@ -19,7 +19,7 @@
                 <label 
                     for="nameEnglish" 
                     class="absolute left-6 top-2 text-sm text-dark-gray transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:dark-gray peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500">
-                    @lang('table.nameEnglish')
+                    @lang('create.nameEnglish')
                 </label>
                 @error('name.en')
                     <p class="mt-2 ml-6 text-xs text-red">{{ $message }}</p>
@@ -38,7 +38,7 @@
                 <label 
                     for="nameGeorgian" 
                     class="absolute left-6 top-2 text-sm text-dark-gray transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:dark-gray peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500">
-                    @lang('table.nameGeorgian')
+                    @lang('create.nameGeorgian')
                 </label>
                 @error('name.ka')
                     <p class="mt-2 ml-6 text-xs text-red">{{ $message }}</p>
@@ -56,7 +56,7 @@
                 <label 
                     for="descriptionEnglish" 
                     class="absolute left-6 top-2 text-sm text-dark-gray transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:dark-gray peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500"                >
-                    @lang('table.descriptionEnglish')
+                    @lang('create.descriptionEnglish')
                 </label>
                 @error('description.en')
                     <p class="mt-2 ml-6 text-xs text-red">{{ $message }}</p>
@@ -74,7 +74,7 @@
                 <label 
                     for="descriptionGeorgian" 
                     class="absolute left-6 top-2 text-sm text-dark-gray transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:dark-gray peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500"                >
-                    @lang('table.descriptionGeorgian')
+                    @lang('create.descriptionGeorgian')
                 </label>
                 @error('description.ka')
                     <p class="mt-2 ml-6 text-xs text-red">{{ $message }}</p>
@@ -94,7 +94,7 @@
                     for="date" 
                     class="absolute left-6 top-4 text-dark-gray text-sm transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-dark-gray peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500"
                 >
-                    @lang('table.dueDate')
+                    @lang('create.dueDate')
                 </label>
                 @error('due_date')
                     <p class="mt-2 ml-6 text-xs text-red">{{ $message }}</p>

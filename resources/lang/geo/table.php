@@ -10,8 +10,4 @@ return [
 	'delete'              => 'წაშლა',
 	'edit'                => 'შეცვლა',
 	'show'                => 'ჩვენება',
-	'nameEnglish'         => 'დავალების სახელი ინგლისურ ენაზე',
-	'nameGeorgian'        => 'დავალების სახელი ქართულ ენაზე',
-	'descriptionEnglish'  => 'აღწერა ინგლისურ ენაზე',
-	'descriptionGeorgian' => 'აღწერა ქართულ ენაზე',
 ];
