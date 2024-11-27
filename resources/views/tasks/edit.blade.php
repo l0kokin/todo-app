@@ -17,7 +17,7 @@
                 name="name[en]"
                 id="nameEnglish"
                 value="{!! $task->getTranslation('name', 'en') !!}" 
-                label="create.nameEnglish"
+                label="create.name_english"
                 error="name.en"
             />
 
@@ -26,7 +26,7 @@
                 name="name[ka]"
                 id="nameGeorgian"
                 value="{!! $task->getTranslation('name', 'ka') !!}" 
-                label="create.nameGeorgian"
+                label="create.name_georgian"
                 error="name.ka"
             />
 
@@ -36,7 +36,7 @@
                 id="descriptionEnglish"
                 value="{!! $task->getTranslation('description', 'en') !!}" 
                 rows="3" 
-                label="create.descriptionEnglish"
+                label="create.description_english"
                 error="description.en"
             />
             
@@ -46,7 +46,7 @@
                 id="descriptionGeorgian"
                 value="{!! $task->getTranslation('description', 'ka') !!}" 
                 rows="3" 
-                label="create.descriptionGeorgian"
+                label="create.description_georgian"
                 error="description.ka"
             />
 
@@ -56,11 +56,11 @@
                 id="date"
                 value="{{ $task->due_date }}" 
                 rows="3" 
-                label="table.dueDate"
+                label="table.due_date"
                 error="due_date"
             />
 
-            <x-button-white type="submit" class="mt-6 py-8 bg-blue hover:bg-blue-darker text-white w-full flex justify-center">@lang('create.editChanges')</x-button-white>       
+            <x-button-white type="submit" class="mt-6 py-8 bg-blue hover:bg-blue-darker text-white w-full flex justify-center">@lang('create.edit_changes')</x-button-white>       
         </form>
     </div>
     <x-languages/>

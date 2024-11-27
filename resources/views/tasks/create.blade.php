@@ -12,7 +12,7 @@
                 name="name[en]"
                 id="nameEnglish"
                 value="name.en" 
-                label="create.nameEnglish"
+                label="create.name_english"
                 error="name.en"
             />
 
@@ -21,7 +21,7 @@
                 name="name[ka]"
                 id="nameGeorgian"
                 value="name.ka" 
-                label="create.nameGeorgian"
+                label="create.name_georgian"
                 error="name.ka"
             />
 
@@ -31,7 +31,7 @@
                 id="descriptionEnglish"
                 value="description.en" 
                 rows="3" 
-                label="create.descriptionEnglish"
+                label="create.description_english"
                 error="description.en"
             />
             
@@ -41,7 +41,7 @@
                 id="descriptionGeorgian"
                 value="description.ka" 
                 rows="3" 
-                label="create.descriptionGeorgian"
+                label="create.description_georgian"
                 error="description.ka"
             />
 
@@ -51,7 +51,7 @@
                 id="date"
                 value="due_date" 
                 rows="3" 
-                label="table.dueDate"
+                label="table.due_date"
                 error="due_date"
             />
 

@@ -18,7 +18,7 @@
             <div class="mt-10 flex justify-between sm:mx-auto sm:w-full sm:max-w-sm">
                 <div>
                     <h2 class=" text-left text-3xl font-bold tracking-tight text-black uppercase whitespace-nowrap">@lang('auth.welcome')</h2>
-                    <p class="font-sans leading-4 text-left text-light-text">@lang('auth.enterDetails')</p>
+                    <p class="font-sans leading-4 text-left text-light-text">@lang('auth.enter_details')</p>
                 </div>
                 <img src="{{ asset('icons/smile.svg') }}" alt="Smiley face" class="">
             </div>

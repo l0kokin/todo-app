@@ -1,11 +1,11 @@
 <?php
 
 return [
-	'create'               => 'Create Task',
-	'edit'                 => 'Edit Task',
-	'editChanges'          => 'Edit Changes',
-	'nameEnglish'          => 'Task name in English',
-	'nameGeorgian'         => 'Task name in Georgian',
-	'descriptionEnglish'   => 'Description in English',
-	'descriptionGeorgian'  => 'Description in Georgian',
+	'create'                 => 'Create Task',
+	'edit'                   => 'Edit Task',
+	'edit_changes'           => 'Edit Changes',
+	'name_english'           => 'Task name in English',
+	'name_georgian'          => 'Task name in Georgian',
+	'description_english'    => 'Description in English',
+	'description_georgian'   => 'Description in Georgian',
 ];

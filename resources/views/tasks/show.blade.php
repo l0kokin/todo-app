@@ -16,8 +16,8 @@
     </div>
 
     <div class="grid grid-cols-2 gap-x-16">
-        <h2 class="text-light-text mb-4">@lang('table.createdDate')</h2>
-        <h2 class="text-light-text mb-4">@lang('table.dueDate')</h2>
+        <h2 class="text-light-text mb-4">@lang('table.created_date')</h2>
+        <h2 class="text-light-text mb-4">@lang('table.due_date')</h2>
         <p class="text-lg">Created at: {{ \Carbon\Carbon::parse($task->created_at)->format('d/m/Y') }}</p>
         <p class="text-lg">Due date: {{ \Carbon\Carbon::parse($task->due_date)->format('d/m/Y') }}</p>
     </div>
