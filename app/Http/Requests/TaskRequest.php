@@ -25,7 +25,6 @@ class TaskRequest extends FormRequest
 				'required',
 				'string',
 				'min:3',
-				// 'regex:/^[ა-ჰ\s,\.!?"\'-]+$/',
 				'regex:/^[ა-ჰ\s,\.!?"\'-;:_—]+$/',
 			],
 
@@ -40,7 +39,6 @@ class TaskRequest extends FormRequest
 				'required',
 				'string',
 				'min:3',
-				// 'regex:/^[ა-ჰ\s,\.!?"\'-]+$/',
 				'regex:/^[ა-ჰ\s,\.!?"\'-;:_—]+$/',
 			],
 
