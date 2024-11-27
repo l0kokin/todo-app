@@ -10,11 +10,12 @@ Route::post('/login', [SessionController::class, 'store'])->name('session.store'
 Route::get('/login', [SessionController::class, 'create'])->name('session.create');
 Route::get('/logout', [SessionController::class, 'destroy'])->name('session.destroy');
 
-Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
-Route::get('/tasks/create', [TaskController::class, 'create'])->name('tasks.create');
-Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');
-Route::get('/tasks/{task}', [TaskController::class, 'show'])->name('tasks.show');
-
-Route::get('/tasks/{task}/edit', [TaskController::class, 'edit'])->name('tasks.edit');
-Route::patch('/tasks/{task}', [TaskController::class, 'update'])->name('tasks.update');
-Route::get('/tasks/{task}/delete', [TaskController::class, 'destroy'])->name('tasks.delete');
+Route::prefix('tasks')->name('tasks.')->controller(TaskController::class)->group(function () {
+	Route::get('/', 'index')->name('index');
+	Route::get('/create', 'create')->name('create');
+	Route::post('/', 'store')->name('store');
+	Route::get('/{task}', 'show')->name('show');
+	Route::get('/{task}/edit', 'edit')->name('edit');
+	Route::patch('/{task}', 'update')->name('update');
+	Route::get('/{task}/delete', 'destroy')->name('delete');
+});
