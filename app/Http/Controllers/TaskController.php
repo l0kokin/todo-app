@@ -42,4 +42,28 @@ class TaskController extends Controller
 
 		return redirect()->route('tasks.index')->with('success', 'Task created successfully!');
 	}
+
+	public function edit(Task $task)
+	{
+		return view('tasks.edit', ['task' => $task]);
+	}
+
+	public function update(TaskRequest $request, Task $task)
+	{
+		$validated = $request->validated();
+
+		$task->update([
+			'name'        => request('name'),
+			'description' => request('description'),
+			'due_date'    => request('due_date'),
+		]);
+
+		return redirect()->route('tasks.index');
+	}
+
+	public function destroy(Task $task)
+	{
+		$task->delete();
+		return redirect('/tasks');
+	}
 }

@@ -20,8 +20,8 @@
                         <x-table-item>{{ \Carbon\Carbon::parse($task->created_at)->format('d/m/Y') }}</x-table-item>
                         <x-table-item>{{ \Carbon\Carbon::parse($task->due_date)->format('d/m/Y') }}</x-table-item>
                         <x-table-item>
-                            <button class="pl-6 mr-8 underline text-black">@lang('table.delete')</button>
-                            <button class="mr-8 underline text-black">@lang('table.edit')</button>
+                            <a href={{ route('tasks.delete', $task->id) }} class="pl-6 mr-8 underline text-black">@lang('table.delete')</a>
+                            <a href={{ route('tasks.edit', $task->id) }} class="mr-8 underline text-black">@lang('table.edit')</a>
                             <a href={{ route('tasks.show', $task->id) }}>
                                 <button class="mr-8 underline text-black">@lang('table.show')</button>
                             </a>
