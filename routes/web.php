@@ -5,6 +5,7 @@ use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home');
+Route::view('/profile', 'profile');
 
 Route::post('/login', [SessionController::class, 'store'])->name('session.store');
 Route::get('/login', [SessionController::class, 'create'])->name('session.create');

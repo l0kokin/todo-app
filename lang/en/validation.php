@@ -194,5 +194,7 @@ return [
 		'description.en' => 'Description',
 		'description.ka' => 'Description',
 		'due_date'       => 'Due Date',
+		'email'          => 'Email',
+		'password'       => 'Password',
 	],
 ];
