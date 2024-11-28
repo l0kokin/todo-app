@@ -9,7 +9,7 @@
             id="{{ $id }}" 
             rows="{{ $rows ?? '' }}" 
             placeholder=" "
-            class="block w-full rounded-lg p-6 text-black bg-gray focus:ring-2 focus:border-blue sm:text-sm outline-none peer
+            class="mt-1 block w-full rounded-lg p-6 text-black bg-gray focus:ring-2 focus:border-blue sm:text-sm outline-none peer
             @error($error) outline-red outline-1 @else border-gray @enderror"
             {{ $attributes }}
         >{{ old($value) }}</textarea>
@@ -20,7 +20,7 @@
             id="{{ $id }}" 
             value="{{ old($value) }}" 
             placeholder=" "
-            class="block w-full rounded-lg p-6 text-black bg-gray focus:ring-2 focus:border-blue sm:text-sm outline-none peer
+            class="mt-1 block w-full rounded-lg p-6 text-black bg-gray focus:ring-2 focus:border-blue sm:text-sm outline-none peer
             @error($error) outline-red outline-1 @else border-gray @enderror"
             {{ $attributes }}
         />
