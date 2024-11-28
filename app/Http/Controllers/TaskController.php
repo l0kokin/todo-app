@@ -28,17 +28,18 @@ class TaskController extends Controller
 		return view('tasks.create');
 	}
 
-	public function store(TaskRequest $request)
+	public function store(TaskRequest $request, Task $task)
 	{
 		$validated = $request->validated();
 
-		Task::create([
-			'name'        => $validated['name'],
-			'description' => $validated['description'],
-			'due_date'    => $validated['due_date'],
-			// change this later
-			'user_id'     => null,
-		]);
+		$task->setTranslation('name', 'en', $validated['name_en']);
+		$task->setTranslation('name', 'ka', $validated['name_ka']);
+		$task->setTranslation('description', 'en', $validated['description_en']);
+		$task->setTranslation('description', 'ka', $validated['description_ka']);
+		$task->due_date = $validated['due_date'];
+		// change this later
+		$task->user_id = null;
+		$task->save();
 
 		return redirect()->route('tasks.index')->with('success', 'Task created successfully!');
 	}

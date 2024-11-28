@@ -3,7 +3,17 @@
 @endphp
 
 <div {{ $attributes([ 'class' => $classes ]) }}>
-    <p class="text-sm px-4 py-3 rounded-xl hover:bg-gray">English</p>
-    <p class="text-sm px-4 py-3 rounded-xl hover:bg-gray">ქართული</p>
-</div>
+    <form action="{{ route('session.locale', ['locale' => 'en']) }}" method="post">
+        @csrf
+        @method('PUT')
 
+        <button class="text-sm px-4 py-3 rounded-xl hover:bg-gray">English</button>
+    </form>
+
+    <form action="{{ route('session.locale', ['locale' => 'ka']) }}" method="post">
+        @csrf
+        @method('PUT')
+
+        <button class="text-sm px-4 py-3 rounded-xl hover:bg-gray">ქართული</button>
+    </form>
+</div>
