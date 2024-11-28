@@ -15,12 +15,12 @@
             <div class="h-full flex flex-col">
             <div class="flex-1 px-4 py-4 overflow-y-auto flex flex-col items-center">
                 <img src="{{ asset('images/avatar.png') }}" alt="Profile Picture" class="w-16 rounded-full mb-28">
-                <x-nav-link :icon="'my-tasks'" :href="('/')">My Tasks</x-nav-link>
-                <x-nav-link :icon="'due-tasks'" :href="('/')">Due Tasks</x-nav-link>
-                <x-nav-link :icon="'profile'" :href="('/')">Profile</x-nav-link>
+                <x-nav-link :icon="'my-tasks'" :href="('/')">{{__('sidebar.my_tasks')}}</x-nav-link>
+                <x-nav-link :icon="'due-tasks'" :href="('/')">{{__('sidebar.due_tasks')}}</x-nav-link>
+                <x-nav-link :icon="'profile'" :href="('/')">{{__('sidebar.profile')}}</x-nav-link>
             </div>
             <div class="px-4 py-4">
-              <x-nav-link :icon="'log-out'" :href="('/')">Log Out</x-nav-link>
+              <x-nav-link :icon="'log-out'" :href="('/')">{{__('sidebar.logout')}}</x-nav-link>
             </div>
           </div>
         </nav>

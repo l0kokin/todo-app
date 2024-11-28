@@ -38,6 +38,6 @@ class SessionController extends Controller
 		session()->put('locale', $locale);
 		App::setLocale($locale);
 
-		return redirect()->route('tasks.index');
+		return redirect()->back();
 	}
 }
