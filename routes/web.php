@@ -12,7 +12,7 @@ Route::get('/login', [SessionController::class, 'create'])->name('session.create
 Route::get('/logout', [SessionController::class, 'destroy'])->name('session.destroy');
 Route::put('/locale', [SessionController::class, 'updateLocale'])->name('session.locale');
 
-Route::prefix('tasks')->name('tasks.')->controller(TaskController::class)->group(function () {
+Route::middleware('auth')->prefix('tasks')->name('tasks.')->controller(TaskController::class)->group(function () {
 	Route::get('/', 'index')->name('index');
 	Route::get('/create', 'create')->name('create');
 	Route::post('/', 'store')->name('store');

@@ -4,38 +4,38 @@
 
         <form action="" class="min-w-[35%] -mt-12 flex flex-col align-center">
             <x-input-field 
-            type="email"
-            name=""
-            id="email"
-            value="" 
-            label="{{__('profile.email')}}"
-            error="email"
+                type="email"
+                name=""
+                id="email"
+                value="" 
+                label="{{__('profile.email')}}"
+                error="email"
             />
 
             <h2 class="self-center uppercase mt-16">{{__('profile.change_password')}}</h2>
             <x-input-field 
-            type="password"
-            name=""
-            id="password"
-            value="" 
-            label="{{__('profile.current_password')}}"
-            error="password"
+                type="password"
+                name=""
+                id="password"
+                value="" 
+                label="{{__('profile.current_password')}}"
+                error="password"
             />
             <x-input-field 
-            type="password"
-            name=""
-            id="password"
-            value="" 
-            label="{{__('profile.new_password')}}"
-            error="password"
+                type="password"
+                name=""
+                id="password"
+                value="" 
+                label="{{__('profile.new_password')}}"
+                error="password"
             />
             <x-input-field 
-            type="password"
-            name=""
-            id="password"
-            value="" 
-            label="{{__('profile.retype_password')}}"
-            error="password"
+                type="password"
+                name=""
+                id="password"
+                value="" 
+                label="{{__('profile.retype_password')}}"
+                error="password"
             />
 
             <h2 class="self-center uppercase mt-16 mb-8">{{__('profile.change_photos')}}</h2>
