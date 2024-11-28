@@ -32,10 +32,8 @@ class TaskController extends Controller
 	{
 		$validated = $request->validated();
 
-		$task->setTranslation('name', 'en', $validated['name']['en']);
-		$task->setTranslation('name', 'ka', $validated['name']['ka']);
-		$task->setTranslation('description', 'en', $validated['description']['en']);
-		$task->setTranslation('description', 'ka', $validated['description']['ka']);
+		$task->name = $validated['name'];
+		$task->description = $validated['description'];
 		$task->due_date = $validated['due_date'];
 		// change this later
 		$task->user_id = null;

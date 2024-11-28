@@ -14,7 +14,7 @@ class TaskRequest extends FormRequest
 	public function rules(): array
 	{
 		return [
-			'name'    => ['required'],
+			'name'    => ['required', 'array'],
 			'name.en' => [
 				'required',
 				'string',
@@ -28,7 +28,7 @@ class TaskRequest extends FormRequest
 				'regex:/^[ა-ჰ\s,\.!?"\'-;:_—]+$/',
 			],
 
-			'description'    => ['required'],
+			'description'    => ['required', 'array'],
 			'description.en' => [
 				'required',
 				'string',
