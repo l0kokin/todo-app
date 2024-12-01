@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TaskRequest;
 use App\Models\Task;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
@@ -35,8 +36,7 @@ class TaskController extends Controller
 		$task->name = $validated['name'];
 		$task->description = $validated['description'];
 		$task->due_date = $validated['due_date'];
-		// change this later
-		$task->user_id = auth()->id;
+		$task->user_id = Auth::user()->id;
 		$task->save();
 
 		return redirect()->route('tasks.index')->with('success', 'Task created successfully!');
