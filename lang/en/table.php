@@ -13,4 +13,5 @@ return [
 	'your_tasks'           => 'Your Tasks',
 	'delete_tasks'         => 'Delete Old Tasks',
 	'add_task'             => 'Add Task',
+	'back'                 => 'Back',
 ];

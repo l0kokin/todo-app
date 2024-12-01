@@ -2,7 +2,7 @@
     <a href={{ route('tasks.index') }} class="flex gap-x-3 mb-4 self-start ml-52">
     <div class="flex flex-col items-center -ml-20">
             <img src="{{ asset('icons/back.svg') }}" class="mb-1">
-            <p class="uppercase">Back</p>
+            <p class="uppercase">{{__("table.back")}}</p>
         </a>
         <x-header-inner>
             @lang('create.edit')
