@@ -18,7 +18,7 @@
                 @if(Auth::user()->profile_picture && file_exists(storage_path('app/public/' . Auth::user()->profile_picture)))
                     <img src="{{ asset('storage/' . Auth::user()->profile_picture) }}" alt="Profile Picture" class="w-16 h-16 object-cover rounded-full mb-28">
                 @else
-                    <img src="{{ asset('images/avatar.png') }}" alt="profile" class="m-10">
+                    <img src="{{ asset('images/avatar.png') }}" alt="profile" class="w-16 h-16 object-cover rounded-full mb-28">
                 @endif
 
                 <x-nav-link :icon="'my-tasks'" :href="('/tasks')">{{__('sidebar.my_tasks')}}</x-nav-link>
