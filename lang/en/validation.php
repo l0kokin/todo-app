@@ -146,7 +146,7 @@ return [
 	'same'                 => 'The :attribute field must match :other.',
 	'size'                 => [
 		'array'   => 'The :attribute field must contain :size items.',
-		'file'    => 'The :attribute field must be :size kilobytes.',
+		'file'    => 'The :attribute fieldპაროლი must be :size kilobytes.',
 		'numeric' => 'The :attribute field must be :size.',
 		'string'  => 'The :attribute field must be :size characters.',
 	],
@@ -175,6 +175,9 @@ return [
 		'name' => [
 			'required' => 'The name field is mandatory.',
 		],
+		'current_password' => [
+			'current_password' => 'Input does not match the current password.',
+		],
 	],
 
 	/*
@@ -189,12 +192,14 @@ return [
 	*/
 
 	'attributes' => [
-		'name.en'        => 'Name',
-		'name.ka'        => 'Name',
-		'description.en' => 'Description',
-		'description.ka' => 'Description',
-		'due_date'       => 'Due Date',
-		'email'          => 'Email',
-		'password'       => 'Password',
+		'name.en'          => 'Name',
+		'name.ka'          => 'Name',
+		'description.en'   => 'Description',
+		'description.ka'   => 'Description',
+		'due_date'         => 'Due Date',
+		'email'            => 'Email',
+		'password'         => 'Password',
+		'new_password'     => 'New Password',
+		'current_password' => 'Current Password',
 	],
 ];

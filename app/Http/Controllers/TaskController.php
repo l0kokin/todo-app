@@ -49,10 +49,8 @@ class TaskController extends Controller
 		return view('tasks.edit', ['task' => $task]);
 	}
 
-	public function update(TaskRequest $request, Task $task)
+	public function update(Task $task)
 	{
-		$validated = $request->validated();
-
 		$task->update([
 			'name'        => request('name'),
 			'description' => request('description'),

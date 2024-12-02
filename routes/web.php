@@ -4,8 +4,12 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'home');
-Route::view('/profile', 'profile');
+Route::view('/', 'home')->name('home');
+
+Route::middleware('auth')->controller(SessionController::class)->group(function () {
+	Route::get('/profile', 'create')->name('profile');
+	Route::patch('/profile{user}', 'update')->name('profile.update');
+});
 
 Route::post('/login', [SessionController::class, 'store'])->name('session.store');
 Route::get('/login', [SessionController::class, 'create'])->name('session.create');
