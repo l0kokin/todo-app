@@ -18,8 +18,8 @@ return new class() extends Migration {
 			$table->string('password');
 			$table->rememberToken();
 			$table->timestamps();
-			$table->string('profile_picture')->nullable();
-			$table->string('cover_photo')->nullable();
+			$table->string('profile_picture')->default(asset('images/avatar.png'));
+			$table->string('cover_photo')->default(asset('images/pattern.png'));
 		});
 
 		Schema::create('password_reset_tokens', function (Blueprint $table) {

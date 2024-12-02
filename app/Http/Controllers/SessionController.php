@@ -56,6 +56,16 @@ class SessionController extends Controller
 		 */
 		$user = Auth::user();
 
+		if ($request->hasFile('profile_picture')) {
+			$profilePicturePath = $request->file('profile_picture')->store('images/profile_pictures', 'public');
+			$user->profile_picture = $profilePicturePath;
+		}
+
+		if ($request->hasFile('cover_photo')) {
+			$coverPhotoPath = $request->file('cover_photo')->store('images/cover_photos', 'public');
+			$user->cover_photo = $coverPhotoPath;
+		}
+
 		$user->update([
 			'email'    => $validated['email'],
 			'password' => $validated['new_password']

@@ -2,7 +2,7 @@
     <div class="flex flex-col items-center -ml-20">
         <x-header-inner>{{__('profile.profile')}}</x-header-inner>
 
-        <form action="{{ route('profile.update', Auth::user()->id) }}" method="POST" class="min-w-[35%] -mt-12 flex flex-col align-center">
+        <form action="{{ route('profile.update', Auth::user()->id) }}" method="POST" enctype="multipart/form-data" class="min-w-[35%] -mt-12 flex flex-col align-center">
             @csrf
             @method('PATCH')
         
@@ -43,7 +43,12 @@
 
             <h2 class="self-center uppercase mt-16 mb-8">{{__('profile.change_photos')}}</h2>
             <div class="flex items-center justify-center gap-x-6 mb-8">
-                <img src="{{ asset('images/avatar.png') }}" alt="Profile Picture" class="w-28 h-28 rounded-full">
+                {{-- Profile Picture --}}
+                @if(Auth::user()->profile_picture && file_exists(storage_path('app/public/' . Auth::user()->profile_picture)))
+                    <img src="{{ asset('storage/' . Auth::user()->profile_picture) }}" alt="Profile" class="w-28 h-28 rounded-full">
+                @else
+                    <img src="{{ asset('images/avatar.png') }}" alt="Cover" class="m-10">
+                @endif
 
                 <label class="group ring-1 ring-inset ring-blue rounded-xl px-6 py-4 bg-white text-blue hover:bg-blue hover:text-white px-4 py-2 cursor-pointer flex items-center gap-x-2 uppercase">
                     <img src="{{ asset('icons/upload.svg') }}" alt="Upload Icon" class="group-hover:invert group-hover:brightness-0 group-hover:contrast-200">
@@ -54,8 +59,13 @@
                 <button class="uppercase text-black px-12">{{__('table.delete')}}</button>
             </div>
             <div class="flex items-center justify-center gap-x-6">
-                <img src="{{ asset('images/pattern.png') }}" alt="Cover" class="w-28 h-28 rounded-xl">
-                
+                {{-- Cover photo --}}
+                @if(Auth::user()->cover_photo && file_exists(storage_path('app/public/' . Auth::user()->cover_photo)))
+                    <img src="{{ asset('storage/' . Auth::user()->cover_photo) }}" alt="Cover" class="w-28 h-28 rounded-xl">
+                @else
+                    <img src="{{ asset('images/pattern.png') }}" alt="Cover" class="w-28 h-28 rounded-xl">
+                @endif
+
                 <label class="group ring-1 ring-inset ring-blue rounded-xl px-6 py-4 bg-white text-blue hover:bg-blue hover:text-white px-4 py-2 cursor-pointer flex items-center gap-x-2 uppercase">
                     <img src="{{ asset('icons/upload.svg') }}" alt="Upload Icon" class="group-hover:invert group-hover:brightness-0 group-hover:contrast-200">
                     <span>{{ __('profile.upload_cover') }}</span>

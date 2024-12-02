@@ -10,8 +10,12 @@
 </head>
 <body class="h-full">
     <div class="flex">
-        {{-- Cover photo --}}
-        <img src="{{ asset('images/pattern.png') }}" alt="Cover" class="m-10 ">
+        {{-- Cover photo  --}}
+        @if(Auth::check() && Auth::user()->cover_photo)
+            <img src="{{ asset('storage/' . Auth::user()->cover_photo) }}" alt="Cover" class="m-10">
+        @else
+            <img src="{{ asset('images/pattern.png') }}" alt="Cover" class="m-10">
+        @endif
 
         {{-- Sign in form --}}
         <div class="flex min-h-full flex-col justify-center mx-20 w-1/2 relative">
