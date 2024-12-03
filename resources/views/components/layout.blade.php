@@ -22,8 +22,7 @@
                 @endif
 
                 <x-nav-link :icon="'my-tasks'" :href="('/tasks')">{{__('sidebar.my_tasks')}}</x-nav-link>
-                {{-- TODO: href do tasks --}}
-                <x-nav-link :icon="'due-tasks'" :href="('/')">{{__('sidebar.due_tasks')}}</x-nav-link>
+                <x-nav-link :icon="'due-tasks'" :href="('/tasks/due')">{{__('sidebar.due_tasks')}}</x-nav-link>
                 <x-nav-link :icon="'profile'" :href="('/profile')">{{__('sidebar.profile')}}</x-nav-link>
             </div>
             <div class="px-4 py-4">

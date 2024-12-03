@@ -17,6 +17,16 @@ class TaskController extends Controller
 		return view('tasks.index', compact('tasks'));
 	}
 
+	public function dueTasks()
+	{
+		$tasks = Task::where('user_id', Auth::user()->id)
+			->where('due_date', '<', now())
+			->latest()
+			->paginate(8);
+
+		return view('tasks.due', compact('tasks'));
+	}
+
 	public function show(Task $task)
 	{
 		if (!$task) {

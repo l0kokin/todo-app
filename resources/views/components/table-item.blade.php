@@ -1,1 +1,7 @@
-<td class="py-4 pr-6 text-light-text">{{ $slot }}</td>
+@php
+    $classes = 'py-4 pr-6 text-light-text'
+@endphp
+
+<td {{ $attributes([ 'class' => $classes ]) }}>{{ $slot }}</td>
+
+
