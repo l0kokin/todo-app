@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'home')->name('home');
 
 Route::middleware('auth')->controller(SessionController::class)->group(function () {
-	Route::get('/profile', 'create')->name('profile');
+	Route::view('/profile', 'profile')->name('profile');
 	Route::patch('/profile{user}', 'update')->name('profile.update');
 });
 

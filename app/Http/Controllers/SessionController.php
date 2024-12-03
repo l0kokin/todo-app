@@ -42,11 +42,6 @@ class SessionController extends Controller
 		return redirect()->back();
 	}
 
-	public function create()
-	{
-		return view('profile');
-	}
-
 	public function update(ProfileRequest $request)
 	{
 		$validated = $request->validated();
