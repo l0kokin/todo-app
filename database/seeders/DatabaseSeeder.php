@@ -18,8 +18,10 @@ class DatabaseSeeder extends Seeder
 			'password' => 'password',
 		]);
 
-		Task::factory()->count(100)->create([
-			'user_id' => $users->random()->id,
-		]);
+		$users->each(function ($user) {
+			Task::factory(100)->create([
+				'user_id' => $user->id,
+			]);
+		});
 	}
 }

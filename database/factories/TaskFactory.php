@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -28,9 +29,11 @@ class TaskFactory extends Factory
 				'ka' => fake('ka_GE')->realText(220),
 			],
 
-			'created_at' => fake()->date,
-			'due_date'   => fake()->date,
 			'user_id'    => User::factory(),
+			'created_at' => fake()->date,
+			'due_date'   => $this->faker->boolean(70)
+				? Carbon::now()->addDays($this->faker->numberBetween(1, 30))
+				: Carbon::now()->subDays($this->faker->numberBetween(1, 30)),
 		];
 	}
 }
