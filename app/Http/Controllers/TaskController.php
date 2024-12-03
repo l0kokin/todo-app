@@ -75,4 +75,13 @@ class TaskController extends Controller
 		$task->delete();
 		return redirect('/tasks');
 	}
+
+	public function destroyOld()
+	{
+		$tasks = Task::where('user_id', Auth::user()->id)
+			->where('due_date', '<', now())
+			->delete();
+
+		return view('tasks.index', compact('tasks'));
+	}
 }

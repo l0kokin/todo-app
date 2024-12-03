@@ -21,6 +21,7 @@ Route::middleware('auth')->prefix('tasks')->name('tasks.')->controller(TaskContr
 	Route::get('/due', 'dueTasks')->name('due');
 	Route::get('/create', 'create')->name('create');
 	Route::post('/', 'store')->name('store');
+	Route::get('/delete', 'destroyOld')->name('delete.old');
 	Route::get('/{task}', 'show')->name('show');
 	Route::get('/{task}/edit', 'edit')->name('edit');
 	Route::patch('/{task}', 'update')->name('update');

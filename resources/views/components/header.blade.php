@@ -4,9 +4,11 @@
     </div>
     <div class="mt-5 flex lg:ml-4 lg:mt-0">
       <span class="ml-3 hidden sm:block">
-        <x-button-white class="bg-white text-blue hover:bg-blue hover:text-white">
+        <a href={{ route('tasks.delete.old')}}>
+          <x-button-white class="bg-white text-blue hover:bg-blue hover:text-white">
             {{__('table.delete_tasks')}}
-        </x-button-white>
+          </x-button-white>
+        </a>
       </span>
   
       <span class="sm:ml-3">
