@@ -21,9 +21,11 @@
                     <img src="{{ asset('images/avatar.png') }}" alt="profile" class="w-16 h-16 object-cover rounded-full mb-28">
                 @endif
 
-                <x-nav-link :icon="'my-tasks'" :href="('/tasks')">{{__('sidebar.my_tasks')}}</x-nav-link>
-                <x-nav-link :icon="'due-tasks'" :href="('/tasks/due')">{{__('sidebar.due_tasks')}}</x-nav-link>
-                <x-nav-link :icon="'profile'" :href="('/profile')">{{__('sidebar.profile')}}</x-nav-link>
+                <div>
+                    <x-nav-link :icon="'my-tasks'" :href="('/tasks')">{{__('sidebar.my_tasks')}}</x-nav-link>
+                    <x-nav-link :icon="'due-tasks'" :href="('/tasks/due')">{{__('sidebar.due_tasks')}}</x-nav-link>
+                    <x-nav-link :icon="'profile'" :href="('/profile')">{{__('sidebar.profile')}}</x-nav-link>
+                </div>
             </div>
             <div class="px-4 py-4">
               <x-nav-link :icon="'log-out'" :href="('/')">{{__('sidebar.logout')}}</x-nav-link>
@@ -32,7 +34,7 @@
         </nav>
       
         <!-- Main Content -->
-        <main class="flex-1 my-40 mx-10 relative">
+        <main class="flex-1 my-40 mx-8 relative">
             {{ $slot }}
         </main>
       </div> 
