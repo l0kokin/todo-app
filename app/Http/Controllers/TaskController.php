@@ -24,7 +24,7 @@ class TaskController extends Controller
 			->latest()
 			->paginate(8);
 
-		return view('tasks.due', compact('tasks'));
+		return view('tasks.index', compact('tasks'));
 	}
 
 	public function show(Task $task)

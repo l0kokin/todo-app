@@ -3,8 +3,8 @@
 return [
 	'task_name'             => 'დავალების სახელი',
 	'description'           => 'აღწერა',
-	'created_at'            => 'შექმნის თარიღი',
-	'created_date'          => 'შექმნის თარიღი',
+	'created_at'            => 'თარიღი',
+	'created_date'          => 'თარიღი',
 	'due_date'              => 'დედლაინი',
 	'actions'               => 'მოქმედებები',
 	'delete'                => 'წაშლა',
