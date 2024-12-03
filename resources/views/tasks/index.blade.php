@@ -19,7 +19,8 @@
                         <x-table-item>{{ $task->description }}</x-table-item>
                         <x-table-item>{{ \Carbon\Carbon::parse($task->created_at)->format('d/m/Y') }}</x-table-item>
                         <x-table-item class="{{ \Carbon\Carbon::parse($task->due_date)->isPast() ? 'text-red' : '' }}">
-                            {{ \Carbon\Carbon::parse($task->due_date)->format('d/m/Y') }}</x-table-item>
+                            {{ \Carbon\Carbon::parse($task->due_date)->format('d/m/Y') }}
+                        </x-table-item>
                         <x-table-item>
                             <a href={{ route('tasks.delete', $task->id) }} class="pl-6 mr-8 underline text-black">{{__('table.delete')}}</a>
                             <a href={{ route('tasks.edit', $task->id) }} class="mr-8 underline text-black">{{__('table.edit')}}</a>

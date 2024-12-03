@@ -78,9 +78,13 @@ class TaskController extends Controller
 
 	public function destroyOld()
 	{
-		$tasks = Task::where('user_id', Auth::user()->id)
+		Task::where('user_id', Auth::user()->id)
 			->where('due_date', '<', now())
 			->delete();
+
+		$tasks = Task::where('user_id', Auth::user()->id)
+			->latest()
+			->paginate(8);
 
 		return view('tasks.index', compact('tasks'));
 	}

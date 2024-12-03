@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
 		]);
 
 		$users->each(function ($user) {
-			Task::factory(100)->create([
+			Task::factory(20)->create([
 				'user_id' => $user->id,
 			]);
 		});

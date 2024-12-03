@@ -32,8 +32,8 @@ class TaskFactory extends Factory
 			'user_id'    => User::factory(),
 			'created_at' => fake()->date,
 			'due_date'   => $this->faker->boolean(70)
-				? Carbon::now()->addDays($this->faker->numberBetween(1, 30))
-				: Carbon::now()->subDays($this->faker->numberBetween(1, 30)),
+			? Carbon::now()->addDays($this->faker->numberBetween(1, 30))
+			: Carbon::now()->subDays($this->faker->numberBetween(1, 30)),
 		];
 	}
 }
