@@ -16,7 +16,7 @@
                 @foreach($tasks as $task)
                     <tr>
                         <x-table-item>{{ $task->name }}</x-table-item>
-                        <x-table-item>{{ $task->description }}</x-table-item>
+                        <x-table-item>{{ Str::limit($task->description, 40) }}</x-table-item>
                         <x-table-item>{{ \Carbon\Carbon::parse($task->created_at)->format('d/m/Y') }}</x-table-item>
                         <x-table-item class="{{ \Carbon\Carbon::parse($task->due_date)->isPast() ? 'text-red' : '' }}">
                             {{ \Carbon\Carbon::parse($task->due_date)->format('d/m/Y') }}
