@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Task Manager</title>
-    @vite(['resources/css/app.css' ])
+    @vite(['resources/js/app.js', 'resources/css/app.css'])
 
 </head>
 <body>
@@ -35,6 +35,26 @@
         <main class="flex-1 my-40 mx-10 relative">
             {{ $slot }}
         </main>
-      </div>      
+      </div> 
+
+      <script>
+        // clearing profile picture
+        function clearProfilePicture() {
+            const profileImage = document.getElementById('profile-picture');
+            const defaultProfileImage = "{{ asset('images/avatar.png') }}"; 
+            profileImage.src = defaultProfileImage; 
+            const profileInput = document.querySelector('input[name="profile_picture"]');
+            profileInput.value = "";  
+        }
+    
+        // clearing cover photo
+        function clearCoverPhoto() {
+            const coverImage = document.getElementById('cover-photo');
+            const defaultCoverImage = "{{ asset('images/pattern.png') }}"; 
+            coverImage.src = defaultCoverImage; 
+            const coverInput = document.querySelector('input[name="cover_photo"]');
+            coverInput.value = "";  
+        }
+    </script>
 </body>
 </html>

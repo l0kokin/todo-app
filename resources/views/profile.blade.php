@@ -45,9 +45,9 @@
             <div class="flex items-center justify-center gap-x-6 mb-8">
                 {{-- Profile Picture --}}
                 @if(Auth::check() && Auth::user()->profile_picture && file_exists(storage_path('app/public/' . Auth::user()->profile_picture)))
-                    <img src="{{ asset('storage/' . Auth::user()->profile_picture) }}" alt="Profile" class="w-28 h-28 rounded-full object-cover">
+                    <img src="{{ asset('storage/' . Auth::user()->profile_picture) }}" alt="Profile" id='profile-picture' class="w-28 h-28 rounded-full object-cover">
                 @else
-                    <img src="{{ asset('images/avatar.png') }}" alt="Cover" class="w-28 h-28 rounded-full object-cover">
+                    <img src="{{ asset('images/avatar.png') }}" alt="Profile" id='profile-picture' class="w-28 h-28 rounded-full object-cover">
                 @endif
 
                 <label class="group ring-1 ring-inset ring-blue rounded-xl px-6 py-4 bg-white text-blue hover:bg-blue hover:text-white px-4 py-2 cursor-pointer flex items-center gap-x-2 uppercase">
@@ -56,15 +56,15 @@
                     <input type="file" name="profile_picture" class="hidden">
                 </label>
 
-                <button class="uppercase text-black px-12">{{__('table.delete')}}</button>
+                <button type="button" onclick="clearProfilePicture()" class="uppercase text-black px-12">{{__('table.delete')}}</button>
             </div>
 
             <div class="flex items-center justify-center gap-x-6">
                 {{-- Cover photo --}}
                 @if(Auth::check() && Auth::user()->cover_photo && file_exists(storage_path('app/public/' . Auth::user()->cover_photo)))
-                    <img src="{{ asset('storage/' . Auth::user()->cover_photo) }}" alt="Cover" class="w-28 h-28 rounded-s-xl">
+                    <img src="{{ asset('storage/' . Auth::user()->cover_photo) }}" alt="Cover" id='cover-photo' class="w-28 h-28 rounded-s-xl">
                 @else
-                    <img src="{{ asset('images/pattern.png') }}" alt="Cover" class="w-28 h-28 rounded-s-xl">
+                    <img src="{{ asset('images/pattern.png') }}" alt="Cover" id='cover-photo' class="w-28 h-28 rounded-s-xl">
                 @endif
 
                 <label class="group ring-1 ring-inset ring-blue rounded-xl px-6 py-4 bg-white text-blue hover:bg-blue hover:text-white px-4 py-2 cursor-pointer flex items-center gap-x-2 uppercase">
@@ -73,7 +73,7 @@
                     <input type="file" name="cover_photo" class="hidden">
                 </label>
 
-                <button class="uppercase text-black px-12">{{__('table.delete')}}</button>
+                <button type="button" onclick="clearCoverPhoto()" class="uppercase text-black px-12">{{__('table.delete')}}</button>
             </div>
             
             <x-button-white type="submit" class="mt-20 mb-24 py-8 bg-blue hover:bg-blue-darker text-white w-full flex justify-center">{{__('profile.change')}}</x-button-white>       
