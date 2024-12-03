@@ -11,7 +11,7 @@
 <body class="h-full">
     <div class="flex">
         {{-- Cover photo  --}}
-        @if(Auth::check() && Auth::user()->cover_photo)
+        @if(Auth::check() && Auth::user()->cover_photo && file_exists(storage_path('app/public/' . Auth::user()->cover_photo)))
             <img src="{{ asset('storage/' . Auth::user()->cover_photo) }}" alt="Cover" class="m-10">
         @else
             <img src="{{ asset('images/pattern.png') }}" alt="Cover" class="m-10">
