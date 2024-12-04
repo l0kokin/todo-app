@@ -18,6 +18,7 @@
             type="{{ $type ?? 'text' }}" 
             name="{{ $name }}" 
             id="{{ $id }}" 
+            password-field
             value="{{ old($value) }}" 
             placeholder=" "
             class="mt-1 block w-full rounded-lg p-6 text-black bg-gray focus:ring-2 focus:border-blue sm:text-sm outline-none peer
@@ -26,10 +27,10 @@
         />
 
         {{-- TODO: Toggle show/hide password --}}
-        @if($type === 'password')
+        @if($name === 'password')
         <img 
             src="{{ asset('icons/eye.svg') }}" 
-            alt="show password" 
+            id="togglePassword" 
             class="absolute right-6 top-6 cursor-pointer" 
         >
         @endif
