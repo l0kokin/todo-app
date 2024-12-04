@@ -1,66 +1,253 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<div style="display:flex; align-items: center">
+  <h1 style="position:relative; top: -6px" >Task Manager App</h1>
+</div>
 
-## About Laravel
+---
+TaskMaster is a task management application that allows users to manage their tasks and stay organized.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Features:
+    Create, view, edit, and delete tasks.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Each task includes:
+    Task name
+    Description
+    Creation Date
+    Due Date
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Task Overview
+    View all tasks in a list format.
+    Identify overdue tasks based on their due dates and delete them if needed.
 
-## Learning Laravel
+User Profile
+    Update user details.
+    Upload profile and cover images to personalize your account.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+#
+### Table of Contents
+* [Prerequisites](#prerequisites)
+* [Tech Stack](#tech-stack)
+* [Getting Started](#getting-started)
+* [Migrations](#migration)
+* [Development](#development)
+* [Deployment with CI / CD](#deployment-with-ci-\-cd)
+* [Project Structure](#project-structure)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+#
+### Prerequisites
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+* PHP: ^8.2
+* Composer ^2.8.2
+* SQLite ^3.45.1
+* Node.js ^18.20.4
+* Vite ^5.4.11
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+#
+### Tech Stack
 
-## Contributing
+* laravel/framework: ^11.9
+* laravel/tinker: ^2.9
+* spatie/laravel-translatable: ^6.8
+* fakerphp/faker: ^1.23 
+* laravel/sail: ^1.26 
+* mockery/mockery: ^1.6 
+* tailwindcss ^3.4.15
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+#
+### Getting Started
+1\. First of all you need to clone E Space repository from github:
+```sh
+git clone https://github.com/RedberryInternship/salome-gogishvili-todo.git
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+2\. Next step requires you to run *composer install* in order to install all the dependencies.
+```sh
+composer install
+```
 
-## Security Vulnerabilities
+3\. after you have installed all the PHP dependencies, it's time to install all the JS dependencies:
+```sh
+npm install
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+and also:
+```sh
+composer run dev
+```
 
-## License
+4\. Now we need to set our env file. Go to the root of your project and execute this command.
+```sh
+cp .env.example .env
+```
+And now you should provide **.env** file all the necessary environment variables:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#
+**APP:**
+APP_NAME=Laravel
+APP_ENV=local
+APP_KEY=
+APP_DEBUG=true
+APP_TIMEZONE=UTC
+APP_URL=http://localhost
+APP_LOCALE=en
+APP_FALLBACK_LOCALE=en
+APP_FAKER_LOCALE=en_US
+APP_MAINTENANCE_DRIVER=file
+PHP_CLI_SERVER_WORKERS=4
+BCRYPT_ROUNDS=12
+
+#
+**LOG:**
+LOG_CHANNEL=stack
+LOG_STACK=single
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=debug
+
+#
+**DB:**
+DB_CONNECTION=sqlite
+
+#
+**SESSION:**
+SESSION_DRIVER=database
+SESSION_LIFETIME=120
+SESSION_ENCRYPT=false
+SESSION_PATH=/
+SESSION_DOMAIN=null
+
+#
+**CONNECTION:**
+BROADCAST_CONNECTION=log
+FILESYSTEM_DISK=local
+QUEUE_CONNECTION=database
+
+#
+**CACHE:**
+CACHE_STORE=database
+CACHE_PREFIX=
+MEMCACHED_HOST=127.0.0.1
+
+#
+**REDIS:**
+REDIS_CLIENT=phpredis
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+#
+**MAIL:**
+MAIL_MAILER=log
+MAIL_HOST=127.0.0.1
+MAIL_PORT=2525
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_FROM_NAME="${APP_NAME}"
+
+#
+**AWS:**
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
+AWS_USE_PATH_STYLE_ENDPOINT=false
+
+#
+**VITE:**
+VITE_APP_NAME="${APP_NAME}"
+
+
+after setting up **.env** file, execute:
+```sh
+php artisan config:cache
+```
+in order to cache environment variables.
+
+##### Now, you should be good to go!
+
+
+#
+### Migration
+if you've completed getting started section, then migrating database if fairly simple process, just execute:
+```sh
+php artisan migrate
+```
+
+#
+### Development
+
+You can run Laravel's built-in development server by executing:
+
+```sh
+  php artisan serve
+```
+
+#
+### Deployment with CI \ CD
+<br/>
+
+!["CI / CD"](./readme/assets/cicd.png)
+
+<br />
+
+Continues Development / Continues Integration & Deployment steps:
+* CI \ CD process first step is of course is development.
+* After some time of development when you are ready to integrate and deploy your feature/fix/work you make a commit or pull request to gihub branch.
+
+
+Then everything should be OK :pray:
+
+#
+### Project Structure
+
+```bash
+├── app
+    ├── Http
+        ├── Controllers
+        ├── Middleware
+        ├── Requests
+    ├── Models
+    ├── Policies
+    ├── Providers
+├── bootstrap
+├── config
+├── database
+    ├── factories
+    ├── migrations
+    ├── seeders
+├── lang
+├── public
+├── resources
+    ├── css
+    ├── js
+    ├── lang
+    ├── views
+        ├── components
+        ├── tasks
+        ├── vendor/pagination
+├── routes
+├── storage
+├── tests
+├── vendor
+├── .env
+├── .env.example
+├── .gitattributes
+├── .gitignore
+├── artisan
+├── composer.json
+├── composer.lock
+├── package.json
+├── phpunit.xml
+├── README.md
+├── vite.config.js
+```
+
+Project structure is fairly straitforward(at least for laravel developers)...
+
+For more information about project standards, take a look at these docs:
+* [Laravel](https://laravel.com/docs/6.x)
