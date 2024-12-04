@@ -25,15 +25,14 @@ User Profile
 
 
 #
-### Table of Contents
+### Table of Contents              
 * [Prerequisites](#prerequisites)
 * [Tech Stack](#tech-stack)
 * [Getting Started](#getting-started)
 * [Migrations](#migration)
 * [Development](#development)
-* [Deployment with CI / CD](#deployment-with-ci-\-cd)
 * [Project Structure](#project-structure)
-
+* [Resources](#resources)
 
 #
 ### Prerequisites
@@ -188,21 +187,6 @@ You can run Laravel's built-in development server by executing:
 ```
 
 #
-### Deployment with CI \ CD
-<br/>
-
-!["CI / CD"](./readme/assets/cicd.png)
-
-<br />
-
-Continues Development / Continues Integration & Deployment steps:
-* CI \ CD process first step is of course is development.
-* After some time of development when you are ready to integrate and deploy your feature/fix/work you make a commit or pull request to gihub branch.
-
-
-Then everything should be OK :pray:
-
-#
 ### Project Structure
 
 ```bash
@@ -251,3 +235,8 @@ Project structure is fairly straitforward(at least for laravel developers)...
 
 For more information about project standards, take a look at these docs:
 * [Laravel](https://laravel.com/docs/6.x)
+
+
+#
+### RESOURCES
+* [Figma](https://www.figma.com/design/HkL8NHL7914PBgdYb6D3zN/Laravel-Dev?node-id=0-1&node-type=canvas&t=sZNxtfGcjQrSEvuE-0)
