@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class CreateUser extends Command
 {
@@ -31,8 +32,24 @@ class CreateUser extends Command
 		$email = $this->ask("What is the user's email?");
 		$password = $this->secret("What is the user's password?");
 
-		if (empty($name) || empty($email) || empty($password)) {
-			$this->error('All fields are required!');
+		$validator = Validator::make(
+			[
+				'name'     => $name,
+				'email'    => $email,
+				'password' => $password,
+			],
+			[
+				'name'     => ['required', 'string', 'max:255'],
+				'email'    => ['required', 'email', 'unique:users,email'],
+				'password' => ['required', 'min:4'],
+			]
+		);
+
+		if ($validator->fails()) {
+			$this->error('Validation failed:');
+			foreach ($validator->errors()->all() as $error) {
+				$this->error("- $error");
+			}
 			return;
 		}
 
