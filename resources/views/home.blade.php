@@ -13,13 +13,13 @@
     <div class="flex gap-x-20">
         {{-- Cover photo  --}}
         @if(Auth::check() && Auth::user()->cover_photo && file_exists(storage_path('app/public/' . Auth::user()->cover_photo)))
-            <img src="{{ asset('storage/' . Auth::user()->cover_photo) }}" alt="Cover" class="m-10">
+            <img src="{{ asset('storage/' . Auth::user()->cover_photo) }}" alt="Cover" class="m-10 object-cover max-w-3xl h-[90vh] rounded-s-[50px]">
         @else
-            <img src="{{ asset('images/pattern.png') }}" alt="Cover" class="m-10">
+            <img src="{{ asset('images/pattern.png') }}" alt="Cover" class="m-10 object-cover max-w-3xl h-[90vh] rounded-s-[50px]">
         @endif
 
         {{-- Sign in form --}}
-        <div class="flex min-h-full flex-col justify-center  relative">
+        <div class="flex min-h-full flex-col justify-center relative">
             <div class="mt-10 flex justify-between sm:mx-auto sm:w-full sm:max-w-sm gap-x-4">
                 <div>
                     <h2 class=" text-left text-3xl font-bold tracking-tight text-black uppercase whitespace-nowrap">@lang('auth.welcome')</h2>
