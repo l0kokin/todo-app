@@ -20,6 +20,8 @@ Route::middleware('auth')->prefix('tasks')->name('tasks.')->controller(TaskContr
 	Route::get('/', 'index')->name('index');
 	Route::get('/due', 'dueTasks')->name('due');
 	Route::get('/create', 'create')->name('create');
+	Route::get('/sort-by-due-date', 'sortByDue')->name('sort.by_due');
+	Route::get('/sort-by-created-date', 'sortByCreate')->name('sort.by_create');
 	Route::post('/', 'store')->name('store');
 	Route::get('/delete', 'destroyOld')->name('delete.old');
 	Route::get('/{task}', 'show')->name('show');

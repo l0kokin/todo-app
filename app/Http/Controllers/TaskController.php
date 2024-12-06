@@ -27,6 +27,24 @@ class TaskController extends Controller
 		return view('tasks.index', compact('tasks'));
 	}
 
+	public function sortByCreate()
+	{
+		$tasks = Task::where('user_id', Auth::user()->id)
+			->orderBy('created_at', 'asc')
+			->paginate(8);
+
+		return view('tasks.index', compact('tasks'));
+	}
+
+	public function sortByDue()
+	{
+		$tasks = Task::where('user_id', Auth::user()->id)
+			->orderBy('due_date', 'asc')
+			->paginate(8);
+
+		return view('tasks.index', compact('tasks'));
+	}
+
 	public function show(Task $task)
 	{
 		if (!$task) {
