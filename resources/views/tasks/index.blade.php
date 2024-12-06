@@ -10,16 +10,15 @@
                     <th class="w-1/7 pb-8 text-left text-gray-400 font-medium text-lg whitespace-nowrap">
                         <div class="flex items-center gap-x-2 pl-6">
                             {{__('table.created_at')}} 
-                            {{-- <a href={{ route('tasks.sort.by_create') }}>                            --}}
-                                <a href="{{ route('tasks.sort', ['sort' => 'created_at', 'direction' => $sortDirection === 'asc' ? 'desc' : 'asc']) }}">
-                                    <img src="{{ asset('icons/arrows.svg') }}" class="max-w-none">
+                            <a href="{{ route('tasks.index', ['sort' => 'created_at', 'direction' => request('direction', 'asc') === 'asc' ? 'desc' : 'asc']) }}">
+                                <img src="{{ asset('icons/arrows.svg') }}" class="max-w-none">
                             </a>
                         </div>
                     </th>
                     <th class="w-1/7 pb-8 text-left text-gray-400 font-medium text-lg whitespace-nowrap">
                         <div class="flex items-center gap-x-2 pl-6">
                             {{__('table.due_date')}}
-                            <a href="{{ route('tasks.sort', ['sort' => 'due_date', 'direction' => $sortDirection === 'asc' ? 'desc' : 'asc']) }}">
+                            <a href="{{ route('tasks.index', ['sort' => 'due_date', 'direction' => request('direction', 'asc') === 'asc' ? 'desc' : 'asc']) }}">
                                 <img src="{{ asset('icons/arrows.svg') }}" class="max-w-none">
                             </a> 
                         </div>

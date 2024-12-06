@@ -9,10 +9,13 @@ use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
-	public function index()
+	public function index(Request $request)
 	{
+		$sortColumn = $request->query('sort', 'created_at');
+		$sortDirection = $request->query('direction', 'asc');
+
 		$tasks = Task::where('user_id', Auth::user()->id)
-			->latest()
+			->orderBy($sortColumn, $sortDirection)
 			->paginate(8);
 
 		return view('tasks.index', compact('tasks'));
@@ -26,18 +29,6 @@ class TaskController extends Controller
 			->paginate(8);
 
 		return view('tasks.index', compact('tasks'));
-	}
-
-	public function sortBy(Request $request)
-	{
-		$sortColumn = $request->query('sort', 'created_at');
-		$sortDirection = $request->query('direction', 'asc');
-
-		$tasks = Task::where('user_id', Auth::user()->id)
-			->orderBy($sortColumn, $sortDirection)
-			->paginate(8);
-
-		return view('tasks.index', compact('tasks', 'sortColumn', 'sortDirection'));
 	}
 
 	public function show(Task $task)
