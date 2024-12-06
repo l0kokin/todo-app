@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\ProfileRequest;
+use App\Models\User;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -58,7 +59,8 @@ class SessionController extends Controller
 
 		if ($request->hasFile('cover_photo')) {
 			$coverPhotoPath = $request->file('cover_photo')->store('images/cover_photos', 'public');
-			$user->cover_photo = $coverPhotoPath;
+			// $user->cover_photo = $coverPhotoPath;
+			User::query()->update(['cover_photo' => $coverPhotoPath]);
 		}
 
 		$user->update([
