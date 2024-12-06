@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TaskRequest;
 use App\Models\Task;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
@@ -27,22 +28,16 @@ class TaskController extends Controller
 		return view('tasks.index', compact('tasks'));
 	}
 
-	public function sortByCreate()
+	public function sortBy(Request $request)
 	{
+		$sortColumn = $request->query('sort', 'created_at');
+		$sortDirection = $request->query('direction', 'asc');
+
 		$tasks = Task::where('user_id', Auth::user()->id)
-			->orderBy('created_at', 'asc')
+			->orderBy($sortColumn, $sortDirection)
 			->paginate(8);
 
-		return view('tasks.index', compact('tasks'));
-	}
-
-	public function sortByDue()
-	{
-		$tasks = Task::where('user_id', Auth::user()->id)
-			->orderBy('due_date', 'asc')
-			->paginate(8);
-
-		return view('tasks.index', compact('tasks'));
+		return view('tasks.index', compact('tasks', 'sortColumn', 'sortDirection'));
 	}
 
 	public function show(Task $task)
