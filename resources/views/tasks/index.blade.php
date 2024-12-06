@@ -11,7 +11,7 @@
                         <div class="flex items-center gap-x-2 pl-6">
                             {{__('table.created_at')}} 
                             <a href={{ route('tasks.sort.by_create') }}>                           
-                                <img src="{{ asset('icons/arrows.svg') }}">
+                                <img src="{{ asset('icons/arrows.svg') }}" class="max-w-none">
                             </a>
                         </div>
                     </th>
@@ -19,7 +19,7 @@
                         <div class="flex items-center gap-x-2 pl-6">
                             {{__('table.due_date')}}
                             <a href={{ route('tasks.sort.by_due') }}>
-                                <img src="{{ asset('icons/arrows.svg') }}">
+                                <img src="{{ asset('icons/arrows.svg') }}" class="max-w-none">
                             </a> 
                         </div>
                     </th>
