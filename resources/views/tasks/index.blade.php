@@ -23,7 +23,7 @@
                             </a> 
                         </div>
                     </th>
-                    <th class="w-1/4 pb-8 pl-6 text-left text-gray-400 font-medium text-lg pl-12">{{__('table.actions')}}</th>
+                    <th class="w-1/4 pb-8 pl-6 text-left text-gray-400 font-medium text-lg !pl-12">{{__('table.actions')}}</th>
                 </tr>
             </thead>
             <tbody class="bg-white">

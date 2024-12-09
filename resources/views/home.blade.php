@@ -13,9 +13,9 @@
     <div class="flex gap-x-20">
         {{-- Cover photo  --}}
         @if(Auth::check() && Auth::user()->cover_photo && file_exists(storage_path('app/public/' . Auth::user()->cover_photo)))
-            <img src="{{ asset('storage/' . Auth::user()->cover_photo) }}" alt="Cover" class="m-10 object-cover max-w-3xl h-[90vh] rounded-s-[50px]">
+            <img src="{{ asset('storage/' . Auth::user()->cover_photo) }}" alt="Cover" class="m-10 object-cover max-w-[43rem] h-[59rem] rounded-s-[50px]">
         @else
-            <img src="{{ asset('images/pattern.png') }}" alt="Cover" class="m-10 object-cover max-w-3xl h-[90vh] rounded-s-[50px]">
+            <img src="{{ asset('images/pattern.png') }}" alt="Cover" class="m-10 object-cover max-w-[43rem] h-[59rem] rounded-s-[50px]">
         @endif
 
         {{-- Sign in form --}}
