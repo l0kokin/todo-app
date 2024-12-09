@@ -5,6 +5,7 @@ use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
+Route::view('/tasks/create', 'tasks.create')->name('tasks.create')->middleware('auth');
 
 Route::middleware('auth')->controller(SessionController::class)->group(function () {
 	Route::view('/profile', 'profile')->name('profile');
@@ -19,7 +20,6 @@ Route::put('/locale', [SessionController::class, 'updateLocale'])->name('session
 Route::middleware('auth')->prefix('tasks')->name('tasks.')->controller(TaskController::class)->group(function () {
 	Route::get('/', 'index')->name('index');
 	Route::get('/due', 'dueTasks')->name('due');
-	Route::view('/create', 'tasks.create')->name('create');
 	Route::post('/', 'store')->name('store');
 	Route::get('/delete', 'destroyOld')->name('delete.old');
 	Route::get('/{task}', 'show')->name('show');
