@@ -40,11 +40,6 @@ class TaskController extends Controller
 		return view('tasks.show', ['task' => $task]);
 	}
 
-	public function create()
-	{
-		return view('tasks.create');
-	}
-
 	public function store(TaskRequest $request, Task $task)
 	{
 		$validated = $request->validated();
