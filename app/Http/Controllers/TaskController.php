@@ -58,12 +58,14 @@ class TaskController extends Controller
 		return view('tasks.edit', ['task' => $task]);
 	}
 
-	public function update(Task $task)
+	public function update(TaskRequest $request, Task $task)
 	{
+		$validated = $request->validated();
+
 		$task->update([
-			'name'        => request('name'),
-			'description' => request('description'),
-			'due_date'    => request('due_date'),
+			'name'        => $validated['name'],
+			'description' => $validated['description'],
+			'due_date'    => $validated['due_date'],
 		]);
 
 		return redirect()->route('tasks.index');
