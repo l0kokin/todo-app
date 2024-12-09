@@ -42,7 +42,7 @@
             />
 
             <h2 class="self-center uppercase mt-16 mb-8">{{__('profile.change_photos')}}</h2>
-            <div class="flex items-center justify-center gap-x-6 mb-8">
+            <div class="flex items-center justify-left gap-x-6 mb-8">
                 {{-- Profile Picture --}}
                 @if(Auth::check() && Auth::user()->profile_picture && file_exists(storage_path('app/public/' . Auth::user()->profile_picture)))
                     <img src="{{ asset('storage/' . Auth::user()->profile_picture) }}" alt="Profile" id='profile-picture' class="w-28 h-28 rounded-full object-cover">
@@ -59,7 +59,7 @@
                 <button type="button" onclick="clearProfilePicture()" class="uppercase text-black px-12">{{__('table.delete')}}</button>
             </div>
 
-            <div class="flex items-center justify-center gap-x-6">
+            <div class="flex items-center justify-left gap-x-6">
                 {{-- Cover photo --}}
                 @if(Auth::check() && Auth::user()->cover_photo && file_exists(storage_path('app/public/' . Auth::user()->cover_photo)))
                     <img src="{{ asset('storage/' . Auth::user()->cover_photo) }}" alt="Cover" id='cover-photo' class="w-28 h-28 rounded-s-xl">
