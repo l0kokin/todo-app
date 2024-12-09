@@ -45,15 +45,15 @@
             <div class="flex items-center justify-left gap-x-6 mb-8">
                 {{-- Profile Picture --}}
                 @if(Auth::check() && Auth::user()->profile_picture && file_exists(storage_path('app/public/' . Auth::user()->profile_picture)))
-                    <img src="{{ asset('storage/' . Auth::user()->profile_picture) }}" alt="Profile" id='profile-picture' class="w-28 h-28 rounded-full object-cover">
+                    <img src="{{ asset('storage/' . Auth::user()->profile_picture) }}" alt="Profile" id="profile-picture" class="w-28 h-28 rounded-full object-cover">
                 @else
-                    <img src="{{ asset('images/avatar.png') }}" alt="Profile" id='profile-picture' class="w-28 h-28 rounded-full object-cover">
+                    <img src="{{ asset('images/avatar.png') }}" alt="Profile" id="profile-picture" class="w-28 h-28 rounded-full object-cover">
                 @endif
 
                 <label class="group ring-1 ring-inset ring-blue rounded-xl px-6 py-4 bg-white text-blue hover:bg-blue hover:text-white px-4 py-2 cursor-pointer flex items-center gap-x-2 uppercase">
                     <img src="{{ asset('icons/upload.svg') }}" alt="Upload Icon" class="group-hover:invert group-hover:brightness-0 group-hover:contrast-200">
                     <span>{{ __('profile.upload_profile') }}</span>
-                    <input type="file" name="profile_picture" class="hidden">
+                    <input type="file" name="profile_picture" id="profile-picture-input" class="hidden" onchange="previewImage('profile-picture-input', 'profile-picture')">
                 </label>
 
                 <button type="button" onclick="clearProfilePicture()" class="uppercase text-black px-12">{{__('table.delete')}}</button>
@@ -62,15 +62,15 @@
             <div class="flex items-center justify-left gap-x-6">
                 {{-- Cover photo --}}
                 @if(Auth::check() && Auth::user()->cover_photo && file_exists(storage_path('app/public/' . Auth::user()->cover_photo)))
-                    <img src="{{ asset('storage/' . Auth::user()->cover_photo) }}" alt="Cover" id='cover-photo' class="w-28 h-28 rounded-s-xl">
+                    <img src="{{ asset('storage/' . Auth::user()->cover_photo) }}" alt="Cover" id="cover-photo" class="w-28 h-28 rounded-s-xl">
                 @else
-                    <img src="{{ asset('images/pattern.png') }}" alt="Cover" id='cover-photo' class="w-28 h-28 rounded-s-xl">
+                    <img src="{{ asset('images/pattern.png') }}" alt="Cover" id="cover-photo" class="w-28 h-28 rounded-s-xl">
                 @endif
 
                 <label class="group ring-1 ring-inset ring-blue rounded-xl px-6 py-4 bg-white text-blue hover:bg-blue hover:text-white px-4 py-2 cursor-pointer flex items-center gap-x-2 uppercase">
                     <img src="{{ asset('icons/upload.svg') }}" alt="Upload Icon" class="group-hover:invert group-hover:brightness-0 group-hover:contrast-200">
                     <span>{{ __('profile.upload_cover') }}</span>
-                    <input type="file" name="cover_photo" class="hidden">
+                    <input type="file" name="cover_photo" id="cover-photo-input" class="hidden" onchange="previewImage('cover-photo-input', 'cover-photo')">
                 </label>
 
                 <button type="button" onclick="clearCoverPhoto()" class="uppercase text-black px-12">{{__('table.delete')}}</button>
