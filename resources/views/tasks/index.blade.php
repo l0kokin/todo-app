@@ -8,20 +8,16 @@
                     <th class="w-1/5 pb-8 text-left text-gray-400 font-medium text-lg">{{__('table.task_name')}}</th>
                     <th class="w-1/3 pb-8 text-left text-gray-400 font-medium text-lg pl-6">{{__('table.description')}}</th>
                     <th class="w-1/7 pb-8 text-left text-gray-400 font-medium text-lg whitespace-nowrap">
-                        <div class="flex items-center gap-x-2 pl-6">
+                        <a href="{{ route('tasks.index', ['sort' => 'created_at', 'direction' => request('direction', 'asc') === 'asc' ? 'desc' : 'asc']) }}" class="flex items-center gap-x-2 pl-6">
                             {{__('table.created_at')}} 
-                            <a href="{{ route('tasks.index', ['sort' => 'created_at', 'direction' => request('direction', 'asc') === 'asc' ? 'desc' : 'asc']) }}">
-                                <img src="{{ asset('icons/arrows.svg') }}" class="max-w-none">
-                            </a>
-                        </div>
+                            <img src="{{ asset('icons/arrows.svg') }}" class="max-w-none">
+                        </a>
                     </th>
                     <th class="w-1/7 pb-8 text-left text-gray-400 font-medium text-lg whitespace-nowrap">
-                        <div class="flex items-center gap-x-2 pl-6">
+                        <a href="{{ route('tasks.index', ['sort' => 'due_date', 'direction' => request('direction', 'asc') === 'asc' ? 'desc' : 'asc']) }}" class="flex items-center gap-x-2 pl-6">
                             {{__('table.due_date')}}
-                            <a href="{{ route('tasks.index', ['sort' => 'due_date', 'direction' => request('direction', 'asc') === 'asc' ? 'desc' : 'asc']) }}">
-                                <img src="{{ asset('icons/arrows.svg') }}" class="max-w-none">
-                            </a> 
-                        </div>
+                            <img src="{{ asset('icons/arrows.svg') }}" class="max-w-none">
+                        </a> 
                     </th>
                     <th class="w-1/4 pb-8 pl-6 text-left text-gray-400 font-medium text-lg !pl-12">{{__('table.actions')}}</th>
                 </tr>
