@@ -15,7 +15,7 @@ class ProfileRequest extends FormRequest
 	{
 		return [
 			'email'                           => ['required', 'email'],
-			'current_password'                => ['required', 'current_password'],
+			'current_password'                => ['nullable', 'current_password'],
 			'new_password'                    => ['nullable', 'min:4', 'confirmed'],
 			'profile_picture'                 => ['nullable', 'image', 'max:2048'],
 			'cover_photo'                     => ['nullable', 'image', 'max:2048'],

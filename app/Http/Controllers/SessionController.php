@@ -59,7 +59,6 @@ class SessionController extends Controller
 
 		if ($request->hasFile('cover_photo')) {
 			$coverPhotoPath = $request->file('cover_photo')->store('images/cover_photos', 'public');
-			// $user->cover_photo = $coverPhotoPath;
 			User::query()->update(['cover_photo' => $coverPhotoPath]);
 		}
 
