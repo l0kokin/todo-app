@@ -77,12 +77,9 @@
 
             <div class="flex items-center justify-left gap-x-6">
                 {{-- Cover photo --}}
-                @if(Auth::check() 
-                    && Auth::user()->cover_photo 
-                    && file_exists(storage_path('app/public/' . Auth::user()->cover_photo))
-                )
+                @if(file_exists(storage_path('app/public/images/cover_photos/user_cover')))
                     <img 
-                        src="{{ asset('storage/' . Auth::user()->cover_photo) }}" 
+                        src="{{ asset('storage/images/cover_photos/user_cover') }}" 
                         alt="Cover" 
                         id="cover-photo" 
                         class="w-28 h-28 rounded-s-xl"

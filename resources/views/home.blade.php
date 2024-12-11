@@ -12,13 +12,9 @@
 <body class="h-full">
     <div class="flex gap-x-20">
         {{-- Cover photo  --}}
-        @if(
-            Auth::check() 
-            && Auth::user()->cover_photo 
-            && file_exists(storage_path('app/public/' . Auth::user()->cover_photo))
-        )
+        @if( file_exists(storage_path('app/public/images/cover_photos/user_cover')) )
             <img 
-                src="{{ asset('storage/' . Auth::user()->cover_photo) }}" 
+                src="{{ asset('storage/images/cover_photos/user_cover') }}" 
                 alt="Cover" 
                 class="m-10 object-cover max-w-[43rem] h-[59rem] rounded-s-[50px]"
             >
