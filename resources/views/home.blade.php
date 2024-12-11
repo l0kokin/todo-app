@@ -12,7 +12,8 @@
 <body class="h-full">
     <div class="flex gap-x-20">
         {{-- Cover photo  --}}
-        @if(Auth::check() 
+        @if(
+            Auth::check() 
             && Auth::user()->cover_photo 
             && file_exists(storage_path('app/public/' . Auth::user()->cover_photo))
         )

@@ -30,6 +30,8 @@ class SessionController extends Controller
 	public function destroy()
 	{
 		Auth::logout();
+		session()->regenerate();
+
 		return redirect()->route('home');
 	}
 
