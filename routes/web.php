@@ -13,7 +13,6 @@ Route::middleware('auth')->controller(SessionController::class)->group(function 
 });
 
 Route::post('/login', [SessionController::class, 'store'])->name('session.store');
-Route::get('/login', [SessionController::class, 'create'])->name('session.create');
 Route::post('/logout', [SessionController::class, 'destroy'])->name('session.destroy');
 Route::put('/locale', [SessionController::class, 'updateLocale'])->name('session.locale');
 

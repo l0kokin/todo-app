@@ -36,7 +36,7 @@
                 <img src="{{ asset('icons/smile.svg') }}" alt="Smiley face">
             </div>
 
-            <form class="space-y-6 mt-10 sm:mx-auto w-[31rem] sm:max-w-sm" action="/login" method="POST">
+            <form class="space-y-6 mt-10 sm:mx-auto w-[31rem] sm:max-w-sm" action="{{ route('session.store') }}" method="POST">
                 @csrf
                 <x-input-field 
                     type="email"
