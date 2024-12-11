@@ -8,6 +8,7 @@ use App\Http\Requests\ProfileRequest;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Storage;
 
 class SessionController extends Controller
 {
@@ -66,7 +67,7 @@ class SessionController extends Controller
 			$files = glob($coverPhotoFolderPath . '/*');
 			foreach ($files as $file) {
 				if (is_file($file)) {
-					unlink($file);
+					Storage::delete($file);
 				}
 			}
 
