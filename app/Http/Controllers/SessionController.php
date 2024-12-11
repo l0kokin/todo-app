@@ -62,13 +62,10 @@ class SessionController extends Controller
 		if ($request->hasFile('cover_photo')) {
 			$coverPhotoFolder = 'images/cover_photos';
 			$coverPhotoName = 'user_cover';
-			$coverPhotoFolderPath = storage_path('app/public/' . $coverPhotoFolder);
 
-			$files = glob($coverPhotoFolderPath . '/*');
+			$files = Storage::files('public/' . $coverPhotoFolder);
 			foreach ($files as $file) {
-				if (is_file($file)) {
-					Storage::delete($file);
-				}
+				Storage::delete($file);
 			}
 
 			$request->file('cover_photo')->storeAs($coverPhotoFolder, $coverPhotoName, 'public');
