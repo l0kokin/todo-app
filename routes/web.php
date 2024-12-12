@@ -13,7 +13,7 @@ Route::middleware('auth')->controller(SessionController::class)->group(function 
 });
 
 Route::post('/login', [SessionController::class, 'store'])->name('session.store');
-Route::post('/logout', [SessionController::class, 'destroy'])->name('session.destroy');
+Route::get('/logout', [SessionController::class, 'destroy'])->name('session.destroy');
 Route::put('/locale', [SessionController::class, 'updateLocale'])->name('session.locale');
 
 Route::middleware('auth')->prefix('tasks')->name('tasks.')->controller(TaskController::class)->group(function () {
