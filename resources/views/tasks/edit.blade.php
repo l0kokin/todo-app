@@ -64,4 +64,16 @@
         </form>
     </div>
     <x-languages/>
+
+    <script>
+        // resize textarea
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("textarea").forEach(autoResize);
+        });
+    
+        function autoResize(textarea) {
+            textarea.style.height = "auto"; 
+            textarea.style.height = textarea.scrollHeight + "px"; 
+        }
+    </script>
 </x-layout>

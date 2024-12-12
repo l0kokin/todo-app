@@ -29,7 +29,7 @@
 
     <label 
         for="{{ $id }}" 
-        class="bg-gray w-11/12 pt-2 absolute left-6 top-0 text-sm text-dark-gray transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:dark-gray peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500">
+        class="absolute left-6 top-2 text-sm text-dark-gray transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:dark-gray peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500">
         {{ __($label) }}
     </label>
     @error($error)
