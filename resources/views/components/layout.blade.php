@@ -31,6 +31,7 @@
             <div class="px-4 py-4">
               <form action="{{ route('session.destroy') }}" method="POST" class="inline">
                 @csrf
+                @method('POST')
                 <button type="submit" class="flex items-center text-left">
                     <p class="block px-3 py-2 text-md font-medium text-text-color mb-4 flex gap-x-2 items-center">
                         <img src="{{ asset('icons/log-out.svg') }}" alt="Icon" class="w-8 h-8">
