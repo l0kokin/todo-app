@@ -74,10 +74,16 @@ class SessionController extends Controller
 		$user->update([
 			'email'    => $validated['email'],
 			'password' => $validated['new_password']
-				? bcrypt($validated['new_password'])
+			? bcrypt($validated['new_password'])
 				: $user->password,
 		]);
 
-		return redirect()->route('home');
+		if ($validated['email'] !== $user->email || !empty($validated['new_password'])) {
+			Auth::logout();
+			session()->regenerate();
+			return redirect()->route('home');
+		}
+
+		return redirect()->route('profile');
 	}
 }
