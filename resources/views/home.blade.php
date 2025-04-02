@@ -7,7 +7,6 @@
     <link rel="icon" href="{{ asset('icons/laravel.svg') }}">
     <title>Task Manager</title>
     @vite(['resources/css/app.css' ])
-
 </head>
 <body class="h-full">
     <div class="flex gap-x-20">
@@ -42,7 +41,7 @@
                     type="email"
                     name="email"
                     id="email"
-                    value="email" 
+                    value="salome@gmail.com" 
                     label="auth.email"
                     error="email"
                 />
@@ -54,7 +53,7 @@
                     label="auth.password"
                     error="password"
                 />     
-            <x-button-white type="submit" class="uppercase bg-blue hover:bg-blue-darker text-white w-full flex justify-center">@lang('auth.login')</x-button-white>
+                <x-button-white type="submit" class="uppercase bg-blue hover:bg-blue-darker text-white w-full flex justify-center">@lang('auth.login')</x-button-white>
             </form>
 
             <x-languages class="bottom-10 right-20"  />
@@ -71,6 +70,9 @@
                 const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
                 passwordField.setAttribute('type', type);
             });
+            
+            document.getElementById('email').value = 'salome@gmail.com';
+            document.getElementById('password').value = 'password';
         });
      </script>
 </body>
